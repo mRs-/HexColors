@@ -1,5 +1,5 @@
 //
-//  UIColor+UIColor_MLColorAdditions.m
+//  UIColor+MLColorAdditions.m
 //
 //  Created by Marius Landwehr on 02.12.12.
 //  The MIT License (MIT)
