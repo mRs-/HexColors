@@ -2,10 +2,10 @@ Pod::Spec.new do |s|
   s.name     = 'HexColor'
   s.version  = '1.0.3'
   s.license  = 'MIT'
-  s.summary  = 'Create HexColors easily'
+  s.summary  = 'Create HexColors easily.'
   s.homepage = 'https://github.com/holgersindbaek'
   s.description = %{
-    Easily create hex colors for both UIColor and NSColor
+    Easily create hex colors for both UIColor and NSColor.
   }
   s.author   = { "holgersindbaek" => "holgersindbaek@gmail.com" }
   s.source   = { :git => 'https://github.com/holgersindbaek/HexColor.git', :tag => s.version.to_s}
