@@ -12,38 +12,31 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "UIColor+MLColorAdditions.h"
+#import "NSColor+MLColorAdditions.h"
 
-@implementation UIColor (MLColorAdditions)
+@implementation NSColor (MLColorAdditions)
 
 
-+ (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
++ (NSColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
 {
     assert(7 == hexString.length);
     assert('#' == [hexString characterAtIndex:0]);
     
-    NSString *redHex    = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(1, 2)]];
-    NSString *greenHex  = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(3, 2)]];
-    NSString *blueHex   = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(5, 2)]];
+    NSColor* result = nil;
+    unsigned colorCode = 0;
+    unsigned char redByte, greenByte, blueByte;
     
-    unsigned redInt = 0;
-    NSScanner *redScanner = [NSScanner scannerWithString:redHex];
-    [redScanner scanHexInt:&redInt];
+    if (nil != hexString)
+    {
+        NSScanner* scanner = [NSScanner scannerWithString:hexString];
+        (void) [scanner scanHexInt:&colorCode]; // ignore error
+    }
+    redByte = (unsigned char)(colorCode >> 16);
+    greenByte = (unsigned char)(colorCode >> 8);
+    blueByte = (unsigned char)(colorCode); // masks off high bits
     
-    unsigned greenInt = 0;
-    NSScanner *greenScanner = [NSScanner scannerWithString:greenHex];
-    [greenScanner scanHexInt:&greenInt];
-    
-    unsigned blueInt = 0;
-    NSScanner *blueScanner = [NSScanner scannerWithString:blueHex];
-    [blueScanner scanHexInt:&blueInt];
-    
-    return [UIColor colorWith8BitRed:redInt green:greenInt blue:blueInt alpha:alpha];
-}
-
-+ (UIColor *)colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha
-{
-    return [UIColor colorWithRed:(float)red/255 green:(float)green/255 blue:(float)blue/255 alpha:alpha];
+    result = [NSColor colorWithCalibratedRed:(CGFloat)redByte / 0xff green:(CGFloat)greenByte / 0xff blue:(CGFloat)blueByte / 0xff alpha:alpha];
+    return result;
 }
 
 @end
