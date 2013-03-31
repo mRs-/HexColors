@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name     = 'FrameAccessor'
+  s.name     = 'NSHexColor'
   s.version  = '1.0.1'
   s.license  = 'MIT'
   s.summary  = 'Easy hex color.'
