@@ -1,5 +1,5 @@
 //
-//  UIColor+MLColorAdditions.m
+//  HexColor.m
 //
 //  Created by Marius Landwehr on 02.12.12.
 //  The MIT License (MIT)
@@ -12,31 +12,38 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "NSColor+NSHexColor.h"
+#import "HexColor.h"
 
-@implementation NSColor (MLColorAdditions)
+@implementation Color (HexColorAddition)
 
-
-+ (NSColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
-{
++ (Color *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha{
     assert(7 == hexString.length);
     assert('#' == [hexString characterAtIndex:0]);
     
-    NSColor* result = nil;
-    unsigned colorCode = 0;
-    unsigned char redByte, greenByte, blueByte;
+    NSString *redHex    = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(1, 2)]];
+    NSString *greenHex  = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(3, 2)]];
+    NSString *blueHex   = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(5, 2)]];
     
-    if (nil != hexString)
-    {
-        NSScanner* scanner = [NSScanner scannerWithString:hexString];
-        (void) [scanner scanHexInt:&colorCode]; // ignore error
-    }
-    redByte = (unsigned char)(colorCode >> 16);
-    greenByte = (unsigned char)(colorCode >> 8);
-    blueByte = (unsigned char)(colorCode); // masks off high bits
+    unsigned redInt = 0;
+    NSScanner *redScanner = [NSScanner scannerWithString:redHex];
+    [redScanner scanHexInt:&redInt];
     
-    result = [NSColor colorWithCalibratedRed:(CGFloat)redByte / 0xff green:(CGFloat)greenByte / 0xff blue:(CGFloat)blueByte / 0xff alpha:alpha];
-    return result;
+    unsigned greenInt = 0;
+    NSScanner *greenScanner = [NSScanner scannerWithString:greenHex];
+    [greenScanner scanHexInt:&greenInt];
+    
+    unsigned blueInt = 0;
+    NSScanner *blueScanner = [NSScanner scannerWithString:blueHex];
+    [blueScanner scanHexInt:&blueInt];
+    
+    Color *color = [[Color alloc] init];
+#if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
+    color = [Color colorWithRed:(float)redInt/255 green:(float)greenInt/255 blue:(float)blueInt/255 alpha:alpha];
+#else
+    color = [Color colorWithCalibratedRed:(float)redInt/255 green:(float)greenInt/255 blue:(float)blueInt/255 alpha:alpha];
+#endif
+    
+    return color;
 }
 
 @end
