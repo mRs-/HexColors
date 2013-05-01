@@ -1,5 +1,5 @@
 //
-//  UIColor+MLColorAdditions.m
+//  HexColor.m
 //
 //  Created by Marius Landwehr on 02.12.12.
 //  The MIT License (MIT)
@@ -12,13 +12,11 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "UIColor+MLColorAdditions.h"
+#import "HexColor.h"
 
-@implementation UIColor (MLColorAdditions)
+@implementation Color (HexColorAddition)
 
-
-+ (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
-{
++ (Color *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha{
     assert(7 == hexString.length);
     assert('#' == [hexString characterAtIndex:0]);
     
@@ -38,12 +36,14 @@
     NSScanner *blueScanner = [NSScanner scannerWithString:blueHex];
     [blueScanner scanHexInt:&blueInt];
     
-    return [UIColor colorWith8BitRed:redInt green:greenInt blue:blueInt alpha:alpha];
-}
-
-+ (UIColor *)colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha
-{
-    return [UIColor colorWithRed:(float)red/255 green:(float)green/255 blue:(float)blue/255 alpha:alpha];
+    Color *color = [[Color alloc] init];
+#if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
+    color = [Color colorWithRed:(float)redInt/255 green:(float)greenInt/255 blue:(float)blueInt/255 alpha:alpha];
+#else
+    color = [Color colorWithCalibratedRed:(float)redInt/255 green:(float)greenInt/255 blue:(float)blueInt/255 alpha:alpha];
+#endif
+    
+    return color;
 }
 
 @end
