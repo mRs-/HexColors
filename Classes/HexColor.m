@@ -3,7 +3,7 @@
 //
 //  Created by Marius Landwehr on 02.12.12.
 //  The MIT License (MIT)
-//  Copyright (c) 2012 Marius Landwehr marius.landwehr@gmail.com
+//  Copyright (c) 2013 Marius Landwehr marius.landwehr@gmail.com
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 //
@@ -14,9 +14,9 @@
 
 #import "HexColor.h"
 
-@implementation Color (HexColorAddition)
+@implementation HXColor (HexColorAddition)
 
-+ (Color *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha{
++ (HXColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha{
     assert(7 == hexString.length);
     assert('#' == [hexString characterAtIndex:0]);
     
@@ -36,14 +36,22 @@
     NSScanner *blueScanner = [NSScanner scannerWithString:blueHex];
     [blueScanner scanHexInt:&blueInt];
     
-    Color *color = [[Color alloc] init];
+    HXColor *color = [HXColor colorWith8BitRed:redInt green:greenInt blue:blueInt alpha:alpha];
+    
+    return color;
+}
+
++ (HXColor *)colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha
+{
+    HXColor *color = [[HXColor alloc] init];
 #if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
-    color = [Color colorWithRed:(float)redInt/255 green:(float)greenInt/255 blue:(float)blueInt/255 alpha:alpha];
+    color = [HXColor colorWithRed:(float)red/255 green:(float)green/255 blue:(float)blue/255 alpha:alpha];
 #else
-    color = [Color colorWithCalibratedRed:(float)redInt/255 green:(float)greenInt/255 blue:(float)blueInt/255 alpha:alpha];
+    color = [HXColor colorWithCalibratedRed:(float)red/255 green:(float)green/255 blue:(float)blue/255 alpha:alpha];
 #endif
     
     return color;
 }
+
 
 @end

@@ -3,7 +3,7 @@
 //
 //  Created by Marius Landwehr on 02.12.12.
 //  The MIT License (MIT)
-//  Copyright (c) 2012 Marius Landwehr marius.landwehr@gmail.com
+//  Copyright (c) 2013 Marius Landwehr marius.landwehr@gmail.com
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 //
@@ -14,14 +14,15 @@
 
 #if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
     #import <UIKit/UIKit.h>
-    #define Color UIColor
+    #define HXColor UIColor
 #else
     #import <Foundation/Foundation.h>
-    #define Color NSColor
+    #define HXColor NSColor
 #endif
 
-@interface Color (HexColorAddition)
+@interface HXColor (HexColorAddition)
 
-+ (Color *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
++ (HXColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
++ (HXColor *)colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha;
 
 @end
