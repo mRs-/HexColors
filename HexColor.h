@@ -1,5 +1,5 @@
 //
-//  UIColor+UIColor_MLColorAdditions.h
+//  HexColor.h
 //
 //  Created by Marius Landwehr on 02.12.12.
 //  The MIT License (MIT)
@@ -12,11 +12,16 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
+    #import <UIKit/UIKit.h>
+    #define Color UIColor
+#else
+    #import <Foundation/Foundation.h>
+    #define Color NSColor
+#endif
 
-@interface UIColor (MLColorAdditions)
+@interface Color (HexColorAddition)
 
-+ (UIColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
-+ (UIColor *)colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha;
++ (Color *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
 
 @end
