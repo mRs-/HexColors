@@ -1,5 +1,8 @@
 HexColors
 =========================
+![Badge w/ Version](http://cocoapod-badges.herokuapp.com/v/HexColors/badge.png)
+
+![Badge w/ Version](http://cocoapod-badges.herokuapp.com/p/HexColors/badge.png)
 
 HexColors is easy drop in category for HexColor integration in iOS and Mac OS X. Its build as a category for easy to use and can be used for UIColor and NSColor class.
 
