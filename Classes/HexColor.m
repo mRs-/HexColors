@@ -17,8 +17,10 @@
 @implementation HXColor (HexColorAddition)
 
 + (HXColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha{
+    if('#' != [hexString characterAtIndex:0]){
+        hexString = [NSString stringWithFormat:@"#%s", hexString];
+    }
     assert(7 == hexString.length);
-    assert('#' == [hexString characterAtIndex:0]);
     
     NSString *redHex    = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(1, 2)]];
     NSString *greenHex  = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(3, 2)]];
