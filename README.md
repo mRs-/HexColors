@@ -4,16 +4,18 @@ HexColors
 
 ![Badge w/ Version](http://cocoapod-badges.herokuapp.com/p/HexColors/badge.png)
 
-HexColors is easy drop in category for HexColor integration in iOS and Mac OS X. Its build as a category for easy to use and can be used for UIColor and NSColor class.
+HexColors is drop in category for HexColor Support for NSColor and UIColor. Support for HexColors with prefixed # and without.
 
 #Example iOS
 ``` objective-c
 UIColor *colorWithHex = [UIColor colorWithHexString:@"#ff8942" alpha:1];
+UIColor *secondColorWithHex = [UIColor colorWithHexString:@"ff8942" alpha:1];
 ```
 
 #Example Mac OS X
 ``` objective-c
 NSColor *colorWithHex = [NSColor colorWithHexString:@"#ff8942" alpha:1];
+NSColor *secondColorWithHex = [NSColor colorWithHexString:@"ff8942" alpha:1];
 ```
 
 #Installation
