@@ -18,7 +18,7 @@
 
 + (HXColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha{
     if('#' != [hexString characterAtIndex:0]){
-        hexString = [NSString stringWithFormat:@"#%s", hexString];
+        hexString = [NSString stringWithFormat:@"#%@", hexString];
     }
     assert(7 == hexString.length);
     
