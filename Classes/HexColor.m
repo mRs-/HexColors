@@ -20,7 +20,14 @@
     if('#' != [hexString characterAtIndex:0]){
         hexString = [NSString stringWithFormat:@"#%@", hexString];
     }
-    assert(7 == hexString.length);
+    assert(7 == hexString.length || 4 == hexString.length);
+    
+    if([hexString length] == 4) {
+        hexString = [NSString stringWithFormat:@"#%@%@%@%@%@%@",
+                       [hexString substringWithRange:NSMakeRange(1, 1)],[hexString substringWithRange:NSMakeRange(1, 1)],
+                       [hexString substringWithRange:NSMakeRange(2, 1)],[hexString substringWithRange:NSMakeRange(2, 1)],
+                       [hexString substringWithRange:NSMakeRange(3, 1)],[hexString substringWithRange:NSMakeRange(3, 1)]];
+    }
     
     NSString *redHex    = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(1, 2)]];
     NSString *greenHex  = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(3, 2)]];
