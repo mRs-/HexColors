@@ -18,28 +18,28 @@
 
 + (HXColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha{
     if('#' != [hexString characterAtIndex:0]){
-        hexString = [NSString stringWithFormat:@"#%s", hexString];
+        hexString = [NSString stringWithFormat:@"#%@", hexString];
     }
     assert(7 == hexString.length);
-    
+
     NSString *redHex    = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(1, 2)]];
     NSString *greenHex  = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(3, 2)]];
     NSString *blueHex   = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(5, 2)]];
-    
+
     unsigned redInt = 0;
     NSScanner *redScanner = [NSScanner scannerWithString:redHex];
     [redScanner scanHexInt:&redInt];
-    
+
     unsigned greenInt = 0;
     NSScanner *greenScanner = [NSScanner scannerWithString:greenHex];
     [greenScanner scanHexInt:&greenInt];
-    
+
     unsigned blueInt = 0;
     NSScanner *blueScanner = [NSScanner scannerWithString:blueHex];
     [blueScanner scanHexInt:&blueInt];
-    
+
     HXColor *color = [HXColor colorWith8BitRed:redInt green:greenInt blue:blueInt alpha:alpha];
-    
+
     return color;
 }
 
@@ -51,7 +51,7 @@
 #else
     color = [HXColor colorWithCalibratedRed:(float)red/255 green:(float)green/255 blue:(float)blue/255 alpha:alpha];
 #endif
-    
+
     return color;
 }
 
