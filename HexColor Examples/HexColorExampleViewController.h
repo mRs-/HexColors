@@ -15,5 +15,8 @@
 - (IBAction)colorOne:(id)sender;
 - (IBAction)colorTwo:(id)sender;
 - (IBAction)colorThree:(id)sender;
+- (IBAction)color333:(id)sender;
+- (IBAction)color656:(id)sender;
+- (IBAction)color295:(id)sender;
 
 @end

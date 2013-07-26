@@ -8,14 +8,26 @@ HexColors is drop in category for HexColor Support for NSColor and UIColor. Supp
 
 #Example iOS
 ``` objective-c
+// with hash
 UIColor *colorWithHex = [UIColor colorWithHexString:@"#ff8942" alpha:1];
+
+// without hash
 UIColor *secondColorWithHex = [UIColor colorWithHexString:@"ff8942" alpha:1];
+
+// short handling
+UIColor *shortColorWithHex = [UIColor colorWithHexString:@"fff" alpha:1];
 ```
 
 #Example Mac OS X
 ``` objective-c
+// with hash
 NSColor *colorWithHex = [NSColor colorWithHexString:@"#ff8942" alpha:1];
+
+// wihtout hash
 NSColor *secondColorWithHex = [NSColor colorWithHexString:@"ff8942" alpha:1];
+
+// short handling
+NSColor *shortColorWithHex = [NSColor colorWithHexString:@"fff" alpha:1];
 ```
 
 #Installation
