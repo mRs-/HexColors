@@ -16,7 +16,13 @@
 
 @implementation HXColor (HexColorAddition)
 
-+ (HXColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha{
++ (HXColor *)colorWithHexString:(NSString *)hexString
+{
+    return [[self class] colorWithHexString:hexString alpha:1.0];
+}
+
++ (HXColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
+{
     if('#' != [hexString characterAtIndex:0]){
         hexString = [NSString stringWithFormat:@"#%@", hexString];
     }
@@ -48,6 +54,11 @@
     HXColor *color = [HXColor colorWith8BitRed:redInt green:greenInt blue:blueInt alpha:alpha];
     
     return color;
+}
+
++ (HXColor *)colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue
+{
+    return [[self class] colorWith8BitRed:red green:green blue:blue alpha:1.0];
 }
 
 + (HXColor *)colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha
