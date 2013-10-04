@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'HexColors'
-  s.version  = '2.2.0'
+  s.version  = '2.2.1'
   s.license  = 'MIT'
   s.summary  = 'Easy HEX- and RGB-Color Handling for UIColor and NSColor as a drop in category. Former MLUIColorAdditions.'
   s.homepage = 'https://github.com/mRs-/HexColors'
