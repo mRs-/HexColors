@@ -18,7 +18,22 @@
 
 + (HXColor *)colorWithHexString:(NSString *)hexString
 {
-    return [[self class] colorWithHexString:hexString alpha:1.0];
+    // Check for hash and add the missing hash
+    if('#' != [hexString characterAtIndex:0])
+    {
+        hexString = [NSString stringWithFormat:@"#%@", hexString];
+    }
+
+    CGFloat alpha = 1.0;
+    if (5 == hexString.length || 9 == hexString.length) {
+        NSString * alphaHex = [hexString substringWithRange:NSMakeRange(1, 9 == hexString.length ? 2 : 1)];
+        if (1 == alphaHex.length) alphaHex = [NSString stringWithFormat:@"%@%@", alphaHex, alphaHex];
+        hexString = [NSString stringWithFormat:@"#%@", [hexString substringFromIndex:9 == hexString.length ? 3 : 2]];
+        unsigned alpha_u = [[self class] hexValueToUnsigned:alphaHex];
+        alpha = ((CGFloat) alpha_u) / 255.0;
+    }
+
+    return [[self class] colorWithHexString:hexString alpha:alpha];
 }
 
 + (HXColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
