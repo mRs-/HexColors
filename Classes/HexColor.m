@@ -70,10 +70,10 @@
 {
     if(hexString.length == 4)
     {
-        hexString = [NSString stringWithFormat:@"#%@%@%@%@%@%@",
-                     [hexString substringWithRange:NSMakeRange(1, 1)],[hexString substringWithRange:NSMakeRange(1, 1)],
-                     [hexString substringWithRange:NSMakeRange(2, 1)],[hexString substringWithRange:NSMakeRange(2, 1)],
-                     [hexString substringWithRange:NSMakeRange(3, 1)],[hexString substringWithRange:NSMakeRange(3, 1)]];
+        hexString = [NSString stringWithFormat:@"#%1$c%1$c%2$c%2$c%3$c%3$c",
+                     [hexString characterAtIndex:1],
+                     [hexString characterAtIndex:2],
+                     [hexString characterAtIndex:3]];
     }
     
     return hexString;
