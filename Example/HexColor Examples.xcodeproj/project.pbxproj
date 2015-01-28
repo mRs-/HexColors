@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DACEC9E1A794CA900FEC3CE /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACEC9D1A794CA900FEC3CE /* HexColor.m */; };
 		6DD2094317FEBB86000B398E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD2094217FEBB86000B398E /* Images.xcassets */; };
 		8E2D283B174BEDA500B30576 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D283A174BEDA500B30576 /* UIKit.framework */; };
 		8E2D283D174BEDA500B30576 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D283C174BEDA500B30576 /* Foundation.framework */; };
@@ -14,12 +15,13 @@
 		8E2D2845174BEDA500B30576 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E2D2843174BEDA500B30576 /* InfoPlist.strings */; };
 		8E2D2847174BEDA500B30576 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D2846174BEDA500B30576 /* main.m */; };
 		8E2D284B174BEDA500B30576 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D284A174BEDA500B30576 /* AppDelegate.m */; };
-		8E2D285A174BEDEC00B30576 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D2859174BEDEC00B30576 /* HexColor.m */; };
 		8E2D285E174BEE1900B30576 /* HexColorExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D285C174BEE1900B30576 /* HexColorExampleViewController.m */; };
 		8E2D285F174BEE1900B30576 /* HexColorExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2D285D174BEE1900B30576 /* HexColorExampleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DACEC9C1A794CA900FEC3CE /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
+		2DACEC9D1A794CA900FEC3CE /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
 		6DD2094217FEBB86000B398E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8E2D2837174BEDA500B30576 /* HexColor Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HexColor Examples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E2D283A174BEDA500B30576 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -31,8 +33,6 @@
 		8E2D2848174BEDA500B30576 /* HexColor Examples-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HexColor Examples-Prefix.pch"; sourceTree = "<group>"; };
 		8E2D2849174BEDA500B30576 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8E2D284A174BEDA500B30576 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8E2D2858174BEDEC00B30576 /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
-		8E2D2859174BEDEC00B30576 /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
 		8E2D285B174BEE1900B30576 /* HexColorExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColorExampleViewController.h; sourceTree = "<group>"; };
 		8E2D285C174BEE1900B30576 /* HexColorExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColorExampleViewController.m; sourceTree = "<group>"; };
 		8E2D285D174BEE1900B30576 /* HexColorExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HexColorExampleViewController.xib; sourceTree = "<group>"; };
@@ -52,10 +52,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DACEC9B1A794CA900FEC3CE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2DACEC9C1A794CA900FEC3CE /* HexColor.h */,
+				2DACEC9D1A794CA900FEC3CE /* HexColor.m */,
+			);
+			name = Classes;
+			path = ../Classes;
+			sourceTree = "<group>";
+		};
 		8E2D282E174BEDA500B30576 = {
 			isa = PBXGroup;
 			children = (
-				8E2D2857174BEDEC00B30576 /* Classes */,
+				2DACEC9B1A794CA900FEC3CE /* Classes */,
 				8E2D2840174BEDA500B30576 /* HexColor Examples */,
 				8E2D2839174BEDA500B30576 /* Frameworks */,
 				8E2D2838174BEDA500B30576 /* Products */,
@@ -103,15 +113,6 @@
 				8E2D2848174BEDA500B30576 /* HexColor Examples-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8E2D2857174BEDEC00B30576 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				8E2D2858174BEDEC00B30576 /* HexColor.h */,
-				8E2D2859174BEDEC00B30576 /* HexColor.m */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,8 +180,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E2D2847174BEDA500B30576 /* main.m in Sources */,
+				2DACEC9E1A794CA900FEC3CE /* HexColor.m in Sources */,
 				8E2D284B174BEDA500B30576 /* AppDelegate.m in Sources */,
-				8E2D285A174BEDEC00B30576 /* HexColor.m in Sources */,
 				8E2D285E174BEE1900B30576 /* HexColorExampleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
