@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DACED241A794E1B00FEC3CE /* HexColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DACED221A794E1B00FEC3CE /* HexColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2DACED251A794E1B00FEC3CE /* HexColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DACED221A794E1B00FEC3CE /* HexColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2DACED261A794E1B00FEC3CE /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACED231A794E1B00FEC3CE /* HexColor.m */; };
-		2DACED271A794E1B00FEC3CE /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACED231A794E1B00FEC3CE /* HexColor.m */; };
+		2DACED241A794E1B00FEC3CE /* HexColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DACED221A794E1B00FEC3CE /* HexColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DACED251A794E1B00FEC3CE /* HexColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DACED221A794E1B00FEC3CE /* HexColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DACED261A794E1B00FEC3CE /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACED231A794E1B00FEC3CE /* HexColors.m */; };
+		2DACED271A794E1B00FEC3CE /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACED231A794E1B00FEC3CE /* HexColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,8 +18,8 @@
 		2DACECAD1A794CD800FEC3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DACED081A794E0500FEC3CE /* HexColorsOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HexColorsOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DACED0B1A794E0500FEC3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DACED221A794E1B00FEC3CE /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
-		2DACED231A794E1B00FEC3CE /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
+		2DACED221A794E1B00FEC3CE /* HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColors.h; sourceTree = "<group>"; };
+		2DACED231A794E1B00FEC3CE /* HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColors.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +94,8 @@
 		2DACED211A794E1B00FEC3CE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2DACED221A794E1B00FEC3CE /* HexColor.h */,
-				2DACED231A794E1B00FEC3CE /* HexColor.m */,
+				2DACED221A794E1B00FEC3CE /* HexColors.h */,
+				2DACED231A794E1B00FEC3CE /* HexColors.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -107,7 +107,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DACED241A794E1B00FEC3CE /* HexColor.h in Headers */,
+				2DACED241A794E1B00FEC3CE /* HexColors.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +115,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DACED251A794E1B00FEC3CE /* HexColor.h in Headers */,
+				2DACED251A794E1B00FEC3CE /* HexColors.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DACED261A794E1B00FEC3CE /* HexColor.m in Sources */,
+				2DACED261A794E1B00FEC3CE /* HexColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DACED271A794E1B00FEC3CE /* HexColor.m in Sources */,
+				2DACED271A794E1B00FEC3CE /* HexColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +415,7 @@
 				2DACED1D1A794E0500FEC3CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

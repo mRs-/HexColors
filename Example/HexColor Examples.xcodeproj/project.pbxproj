@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DACEC9E1A794CA900FEC3CE /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACEC9D1A794CA900FEC3CE /* HexColor.m */; };
+		2DACEC9E1A794CA900FEC3CE /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACEC9D1A794CA900FEC3CE /* HexColors.m */; };
 		6DD2094317FEBB86000B398E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD2094217FEBB86000B398E /* Images.xcassets */; };
 		8E2D283B174BEDA500B30576 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D283A174BEDA500B30576 /* UIKit.framework */; };
 		8E2D283D174BEDA500B30576 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D283C174BEDA500B30576 /* Foundation.framework */; };
@@ -20,8 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2DACEC9C1A794CA900FEC3CE /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
-		2DACEC9D1A794CA900FEC3CE /* HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
+		2DACEC9C1A794CA900FEC3CE /* HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColors.h; sourceTree = "<group>"; };
+		2DACEC9D1A794CA900FEC3CE /* HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColors.m; sourceTree = "<group>"; };
 		6DD2094217FEBB86000B398E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8E2D2837174BEDA500B30576 /* HexColor Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HexColor Examples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E2D283A174BEDA500B30576 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -55,8 +55,8 @@
 		2DACEC9B1A794CA900FEC3CE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2DACEC9C1A794CA900FEC3CE /* HexColor.h */,
-				2DACEC9D1A794CA900FEC3CE /* HexColor.m */,
+				2DACEC9C1A794CA900FEC3CE /* HexColors.h */,
+				2DACEC9D1A794CA900FEC3CE /* HexColors.m */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -180,7 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E2D2847174BEDA500B30576 /* main.m in Sources */,
-				2DACEC9E1A794CA900FEC3CE /* HexColor.m in Sources */,
+				2DACEC9E1A794CA900FEC3CE /* HexColors.m in Sources */,
 				8E2D284B174BEDA500B30576 /* AppDelegate.m in Sources */,
 				8E2D285E174BEE1900B30576 /* HexColorExampleViewController.m in Sources */,
 			);
