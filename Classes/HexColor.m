@@ -23,6 +23,10 @@
 
 + (HXColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
 {
+    if (hexString.length == 0) {
+        return nil;
+    }
+    
     // Check for hash and add the missing hash
     if('#' != [hexString characterAtIndex:0])
     {
