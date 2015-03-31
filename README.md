@@ -31,7 +31,7 @@ NSColor *shortColorWithHex = [NSColor colorWithHexString:@"fff" alpha:1];
 ```
 
 #Installation
-* `#import HexColors.h` where you want to use easy as pie HexColors
+* `#import "HexColor.h"` where you want to use easy as pie HexColors
 * `pod install HexColors`
 * or just drag the source files in your project
 
