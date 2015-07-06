@@ -49,7 +49,13 @@
     }
     
     // check for string length
-    assert(7 == hexString.length || 4 == hexString.length);
+    if (7 != hexString.length && 4 != hexString.length) {
+        NSString *defaultHex    = [NSString stringWithFormat:@"0xff"];
+        unsigned defaultInt = [[self class] hexValueToUnsigned:defaultHex];
+        
+        HXColor *color = [HXColor colorWith8BitRed:defaultInt green:defaultInt blue:defaultInt alpha:1.0];
+        return color;
+    }
     
     // check for 3 character HexStrings
     hexString = [[self class] hexStringTransformFromThreeCharacters:hexString];
