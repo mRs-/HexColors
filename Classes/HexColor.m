@@ -89,11 +89,11 @@
 {
     if(hexString.length == 4)
     {
-        NSString *red = [hexString substringWithRange:NSMakeRange(1, 1)];
-        NSString *green = [hexString substringWithRange:NSMakeRange(2, 1)];
-        NSString *blue = [hexString substringWithRange:NSMakeRange(3, 1)];
-
-        hexString = [NSString stringWithFormat:@"#%@%@%@%@%@%@", red, red, green, green, blue, blue];
+        hexString = [NSString stringWithFormat:@"#%1$c%1$c%2$c%2$c%3$c%3$c",
+                     [hexString characterAtIndex:1],
+                     [hexString characterAtIndex:2],
+                     [hexString characterAtIndex:3]];
+        
     }
     
     return hexString;
