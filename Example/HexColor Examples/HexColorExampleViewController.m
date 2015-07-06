@@ -7,7 +7,7 @@
 //
 
 #import "HexColorExampleViewController.h"
-#import "HexColor.h"
+#import "HexColors.h"
 
 @interface HexColorExampleViewController ()
 
