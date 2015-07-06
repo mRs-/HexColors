@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'HexColors'
-  s.version  = '2.2.1'
+  s.version  = '2.3.0'
   s.license  = 'MIT'
   s.summary  = 'Easy HEX- and RGB-Color Handling for UIColor and NSColor as a drop in category. Former MLUIColorAdditions.'
   s.homepage = 'https://github.com/mRs-/HexColors'
@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/mRs-/HexColors.git', :tag => s.version.to_s}
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.6'
-  s.source_files = 'Classes/HexColor.{h,m}'
+  s.source_files = 'Classes/HexColors.{h,m}'
 end
