@@ -11,5 +11,6 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/mRs-/HexColors.git', :tag => s.version.to_s}
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.6'
+  s.watchos.deployment_target = '2.0'
   s.source_files = 'Classes/HexColors.{h,m}'
 end
