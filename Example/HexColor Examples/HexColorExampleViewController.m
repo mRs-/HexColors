@@ -38,37 +38,37 @@
 
 - (IBAction)colorOne:(id)sender {
     [UIView animateWithDuration:0.3 animations:^{
-        self.backgroundView.backgroundColor = [UIColor colorWithHexString:@"#999999"];
+        self.backgroundView.backgroundColor = [UIColor hex_colorWithHexString:@"#999999"];
     }];
 }
 
 - (IBAction)colorTwo:(id)sender {
     [UIView animateWithDuration:0.3 animations:^{
-        self.backgroundView.backgroundColor = [UIColor colorWithHexString:@"#334455"];
+        self.backgroundView.backgroundColor = [UIColor hex_colorWithHexString:@"#334455"];
     }];
 }
 
 - (IBAction)colorThree:(id)sender {
     [UIView animateWithDuration:0.3 animations:^{
-        self.backgroundView.backgroundColor = [UIColor colorWithHexString:@"#ff0099"];
+        self.backgroundView.backgroundColor = [UIColor hex_colorWithHexString:@"#ff0099"];
     }];
 }
 
 - (IBAction)color333:(id)sender {
     [UIView animateWithDuration:0.3 animations:^{
-        self.backgroundView.backgroundColor = [UIColor colorWithHexString:@"333"];
+        self.backgroundView.backgroundColor = [UIColor hex_colorWithHexString:@"333"];
     }];
 }
 
 - (IBAction)color656:(id)sender {
     [UIView animateWithDuration:0.3 animations:^{
-        self.backgroundView.backgroundColor = [UIColor colorWithHexString:@"656"];
+        self.backgroundView.backgroundColor = [UIColor hex_colorWithHexString:@"656"];
     }];
 }
 
 - (IBAction)color295:(id)sender {
     [UIView animateWithDuration:0.3 animations:^{
-        self.backgroundView.backgroundColor = [UIColor colorWithHexString:@"295"];
+        self.backgroundView.backgroundColor = [UIColor hex_colorWithHexString:@"295"];
     }];
 }
 @end
