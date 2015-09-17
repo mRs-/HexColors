@@ -16,7 +16,7 @@
 
 @implementation HXColor (HexColorAddition)
 
-+ (HXColor *)colorWithHexString:(NSString *)hexString
++ (HXColor *)hx_colorWithHexString:(NSString *)hexString
 {
     // Check for hash and add the missing hash
     if('#' != [hexString characterAtIndex:0])
@@ -29,14 +29,14 @@
         NSString * alphaHex = [hexString substringWithRange:NSMakeRange(1, 9 == hexString.length ? 2 : 1)];
         if (1 == alphaHex.length) alphaHex = [NSString stringWithFormat:@"%@%@", alphaHex, alphaHex];
         hexString = [NSString stringWithFormat:@"#%@", [hexString substringFromIndex:9 == hexString.length ? 3 : 2]];
-        unsigned alpha_u = [[self class] hexValueToUnsigned:alphaHex];
+        unsigned alpha_u = [[self class] hx_hexValueToUnsigned:alphaHex];
         alpha = ((CGFloat) alpha_u) / 255.0;
     }
 
-    return [[self class] colorWithHexString:hexString alpha:alpha];
+    return [[self class] hx_colorWithHexString:hexString alpha:alpha];
 }
 
-+ (HXColor *)colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
++ (HXColor *)hx_colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
 {
     if (hexString.length == 0) {
         return nil;
@@ -51,35 +51,35 @@
     // check for string length
     if (7 != hexString.length && 4 != hexString.length) {
         NSString *defaultHex    = [NSString stringWithFormat:@"0xff"];
-        unsigned defaultInt = [[self class] hexValueToUnsigned:defaultHex];
+        unsigned defaultInt = [[self class] hx_hexValueToUnsigned:defaultHex];
         
-        HXColor *color = [HXColor colorWith8BitRed:defaultInt green:defaultInt blue:defaultInt alpha:1.0];
+        HXColor *color = [HXColor hx_colorWith8BitRed:defaultInt green:defaultInt blue:defaultInt alpha:1.0];
         return color;
     }
     
     // check for 3 character HexStrings
-    hexString = [[self class] hexStringTransformFromThreeCharacters:hexString];
+    hexString = [[self class] hx_hexStringTransformFromThreeCharacters:hexString];
     
     NSString *redHex    = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(1, 2)]];
-    unsigned redInt = [[self class] hexValueToUnsigned:redHex];
+    unsigned redInt = [[self class] hx_hexValueToUnsigned:redHex];
     
     NSString *greenHex  = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(3, 2)]];
-    unsigned greenInt = [[self class] hexValueToUnsigned:greenHex];
+    unsigned greenInt = [[self class] hx_hexValueToUnsigned:greenHex];
     
     NSString *blueHex   = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(5, 2)]];
-    unsigned blueInt = [[self class] hexValueToUnsigned:blueHex];
+    unsigned blueInt = [[self class] hx_hexValueToUnsigned:blueHex];
     
-    HXColor *color = [HXColor colorWith8BitRed:redInt green:greenInt blue:blueInt alpha:alpha];
+    HXColor *color = [HXColor hx_colorWith8BitRed:redInt green:greenInt blue:blueInt alpha:alpha];
     
     return color;
 }
 
-+ (HXColor *)colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue
++ (HXColor *)hx_colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue
 {
-    return [[self class] colorWith8BitRed:red green:green blue:blue alpha:1.0];
+    return [[self class] hx_colorWith8BitRed:red green:green blue:blue alpha:1.0];
 }
 
-+ (HXColor *)colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha
++ (HXColor *)hx_colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha
 {
     HXColor *color = nil;
 #if (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
@@ -91,7 +91,7 @@
     return color;
 }
 
-+ (NSString *)hexStringTransformFromThreeCharacters:(NSString *)hexString
++ (NSString *)hx_hexStringTransformFromThreeCharacters:(NSString *)hexString
 {
     if(hexString.length == 4)
     {
@@ -105,7 +105,7 @@
     return hexString;
 }
 
-+ (unsigned)hexValueToUnsigned:(NSString *)hexValue
++ (unsigned)hx_hexValueToUnsigned:(NSString *)hexValue
 {
     unsigned value = 0;
     
