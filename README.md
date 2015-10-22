@@ -10,6 +10,7 @@ HexColors is drop in category for HexColor Support for NSColor and UIColor. Supp
 Popular request was to pre-fix the function calls because of better support of different libraries and dependencies. All functions are now prefixed with hx_
 
 #Example iOS
+##objective-c##
 ``` objective-c
 // with hash
 UIColor *colorWithHex = [UIColor hx_colorWithHexString:@"#ff8942"];
@@ -19,6 +20,17 @@ UIColor *secondColorWithHex = [UIColor hx_colorWithHexString:@"ff8942"];
 
 // short handling
 UIColor *shortColorWithHex = [UIColor hx_colorWithHexString:@"fff"];
+```
+##swift##
+``` swift
+// with hash
+let colorWithHex = UIColor.hx_colorWithHexString("#ff8942")
+
+// without hash
+let secondColorWithHex = UIColor.hx_colorWithHexString("ff8942")
+
+// short handling
+let shortColorWithHex = UIColor.hx_colorWithHexString("fff")
 ```
 
 #Example Mac OS X
@@ -31,6 +43,17 @@ NSColor *secondColorWithHex = [NSColor hx_colorWithHexString:@"ff8942"];
 
 // short handling
 NSColor *shortColorWithHex = [NSColor hx_colorWithHexString:@"fff"];
+```
+##swift##
+``` swift
+// with hash
+let colorWithHex = NSColor.hx_colorWithHexString("#ff8942")
+
+// without hash
+let secondColorWithHex = NSColor.hx_colorWithHexString("ff8942")
+
+// short handling
+let shortColorWithHex = NSColor.hx_colorWithHexString("fff")
 ```
 
 #Installation
