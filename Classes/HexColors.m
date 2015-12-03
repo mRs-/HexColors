@@ -18,6 +18,10 @@
 
 + (HXColor *)hx_colorWithHexString:(NSString *)hexString
 {
+    if (hexString.length == 0) {
+        return nil;
+    }
+    
     // Check for hash and add the missing hash
     if('#' != [hexString characterAtIndex:0])
     {
