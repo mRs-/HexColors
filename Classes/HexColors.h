@@ -24,10 +24,10 @@
 
 @interface HXColor (HexColorAddition)
 
-+ (HXColor *)hx_colorWithHexString:(NSString *)hexString;
-+ (HXColor *)hx_colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
++ (nullable HXColor *)hx_colorWithHexString:(nonnull NSString *)hexString;
++ (nullable HXColor *)hx_colorWithHexString:(nonnull NSString *)hexString alpha:(CGFloat)alpha;
 
-+ (HXColor *)hx_colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue;
-+ (HXColor *)hx_colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha;
++ (nonnull HXColor *)hx_colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue;
++ (nonnull HXColor *)hx_colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha;
 
 @end
