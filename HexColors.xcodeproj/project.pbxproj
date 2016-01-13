@@ -295,8 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EB8367F1C46E8A80008E218 /* HexColorsTests.m in Sources */,
 				8EB836871C46E9830008E218 /* HexColors.m in Sources */,
+				8EB8367F1C46E8A80008E218 /* HexColorsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
