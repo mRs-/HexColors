@@ -18,43 +18,36 @@
 
 + (HXColor *)hx_colorWithHexString:(NSString *)hexString
 {
-    // Check for hash and add the missing hash
-    if('#' != [hexString characterAtIndex:0])
-    {
-        hexString = [NSString stringWithFormat:@"#%@", hexString];
-    }
-
-    CGFloat alpha = 1.0;
-    if (5 == hexString.length || 9 == hexString.length) {
-        NSString * alphaHex = [hexString substringWithRange:NSMakeRange(1, 9 == hexString.length ? 2 : 1)];
-        if (1 == alphaHex.length) alphaHex = [NSString stringWithFormat:@"%@%@", alphaHex, alphaHex];
-        hexString = [NSString stringWithFormat:@"#%@", [hexString substringFromIndex:9 == hexString.length ? 3 : 2]];
-        unsigned alpha_u = [[self class] hx_hexValueToUnsigned:alphaHex];
-        alpha = ((CGFloat) alpha_u) / 255.0;
-    }
-
-    return [[self class] hx_colorWithHexString:hexString alpha:alpha];
+    return [[self class] hx_colorWithHexString:hexString alpha:1.0];
 }
 
 + (HXColor *)hx_colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha
 {
+    // We found an empty string, we are returning nothing
     if (hexString.length == 0) {
         return nil;
     }
     
     // Check for hash and add the missing hash
-    if('#' != [hexString characterAtIndex:0])
-    {
+    if('#' != [hexString characterAtIndex:0]) {
         hexString = [NSString stringWithFormat:@"#%@", hexString];
     }
     
-    // check for string length
-    if (7 != hexString.length && 4 != hexString.length) {
-        NSString *defaultHex    = [NSString stringWithFormat:@"0xff"];
-        unsigned defaultInt = [[self class] hx_hexValueToUnsigned:defaultHex];
-        
-        HXColor *color = [HXColor hx_colorWith8BitRed:defaultInt green:defaultInt blue:defaultInt alpha:1.0];
-        return color;
+    // returning no object on wrong alpha values
+    NSArray *validHexStringLengths = @[@4, @5, @7, @9];
+    NSNumber *hexStringLengthNumber = [NSNumber numberWithUnsignedInteger:hexString.length];
+    if ([validHexStringLengths indexOfObject:hexStringLengthNumber] == NSNotFound) {
+        return nil;
+    }
+    
+    // if the hex string is 5 or 9 we are ignoring the alpha value and we are using the value from the hex string instead
+    CGFloat handedInAlpha = alpha;
+    if (5 == hexString.length || 9 == hexString.length) {
+        NSString * alphaHex = [hexString substringWithRange:NSMakeRange(1, 9 == hexString.length ? 2 : 1)];
+        if (1 == alphaHex.length) alphaHex = [NSString stringWithFormat:@"%@%@", alphaHex, alphaHex];
+        hexString = [NSString stringWithFormat:@"#%@", [hexString substringFromIndex:9 == hexString.length ? 3 : 2]];
+        unsigned alpha_u = [[self class] hx_hexValueToUnsigned:alphaHex];
+        handedInAlpha = ((CGFloat) alpha_u) / 255.0;
     }
     
     // check for 3 character HexStrings
@@ -69,7 +62,7 @@
     NSString *blueHex   = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(5, 2)]];
     unsigned blueInt = [[self class] hx_hexValueToUnsigned:blueHex];
     
-    HXColor *color = [HXColor hx_colorWith8BitRed:redInt green:greenInt blue:blueInt alpha:alpha];
+    HXColor *color = [HXColor hx_colorWith8BitRed:redInt green:greenInt blue:blueInt alpha:handedInAlpha];
     
     return color;
 }
