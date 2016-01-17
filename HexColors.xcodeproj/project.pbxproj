@@ -11,7 +11,20 @@
 		2DACED251A794E1B00FEC3CE /* HexColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DACED221A794E1B00FEC3CE /* HexColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DACED261A794E1B00FEC3CE /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACED231A794E1B00FEC3CE /* HexColors.m */; };
 		2DACED271A794E1B00FEC3CE /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACED231A794E1B00FEC3CE /* HexColors.m */; };
+		8EB8367F1C46E8A80008E218 /* HexColorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8367E1C46E8A80008E218 /* HexColorsTests.m */; };
+		8EB836811C46E8A80008E218 /* HexColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DACECA91A794CD800FEC3CE /* HexColors.framework */; };
+		8EB836871C46E9830008E218 /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DACED231A794E1B00FEC3CE /* HexColors.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EB836821C46E8A80008E218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DACECA01A794CD800FEC3CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DACECA81A794CD800FEC3CE;
+			remoteInfo = HexColors;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2DACECA91A794CD800FEC3CE /* HexColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HexColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +33,9 @@
 		2DACED0B1A794E0500FEC3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DACED221A794E1B00FEC3CE /* HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColors.h; sourceTree = "<group>"; };
 		2DACED231A794E1B00FEC3CE /* HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColors.m; sourceTree = "<group>"; };
+		8EB8367C1C46E8A80008E218 /* HexColorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HexColorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EB8367E1C46E8A80008E218 /* HexColorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HexColorsTests.m; sourceTree = "<group>"; };
+		8EB836801C46E8A80008E218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +53,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EB836791C46E8A80008E218 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EB836811C46E8A80008E218 /* HexColors.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +70,7 @@
 				2DACED211A794E1B00FEC3CE /* Classes */,
 				2DACECAB1A794CD800FEC3CE /* HexColors */,
 				2DACED091A794E0500FEC3CE /* HexColorsOSX */,
+				8EB8367D1C46E8A80008E218 /* HexColorsTests */,
 				2DACECAA1A794CD800FEC3CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +80,7 @@
 			children = (
 				2DACECA91A794CD800FEC3CE /* HexColors.framework */,
 				2DACED081A794E0500FEC3CE /* HexColorsOSX.framework */,
+				8EB8367C1C46E8A80008E218 /* HexColorsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +124,15 @@
 				2DACED231A794E1B00FEC3CE /* HexColors.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		8EB8367D1C46E8A80008E218 /* HexColorsTests */ = {
+			isa = PBXGroup;
+			children = (
+				8EB8367E1C46E8A80008E218 /* HexColorsTests.m */,
+				8EB836801C46E8A80008E218 /* Info.plist */,
+			);
+			path = HexColorsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +193,24 @@
 			productReference = 2DACED081A794E0500FEC3CE /* HexColorsOSX.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		8EB8367B1C46E8A80008E218 /* HexColorsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EB836861C46E8A80008E218 /* Build configuration list for PBXNativeTarget "HexColorsTests" */;
+			buildPhases = (
+				8EB836781C46E8A80008E218 /* Sources */,
+				8EB836791C46E8A80008E218 /* Frameworks */,
+				8EB8367A1C46E8A80008E218 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EB836831C46E8A80008E218 /* PBXTargetDependency */,
+			);
+			name = HexColorsTests;
+			productName = HexColorsTests;
+			productReference = 8EB8367C1C46E8A80008E218 /* HexColorsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,6 +225,9 @@
 					};
 					2DACED071A794E0500FEC3CE = {
 						CreatedOnToolsVersion = 6.1.1;
+					};
+					8EB8367B1C46E8A80008E218 = {
+						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
 			};
@@ -189,6 +245,7 @@
 			targets = (
 				2DACECA81A794CD800FEC3CE /* HexColors */,
 				2DACED071A794E0500FEC3CE /* HexColorsOSX */,
+				8EB8367B1C46E8A80008E218 /* HexColorsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +259,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2DACED061A794E0500FEC3CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EB8367A1C46E8A80008E218 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -227,7 +291,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EB836781C46E8A80008E218 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EB836871C46E9830008E218 /* HexColors.m in Sources */,
+				8EB8367F1C46E8A80008E218 /* HexColorsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EB836831C46E8A80008E218 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DACECA81A794CD800FEC3CE /* HexColors */;
+			targetProxy = 8EB836821C46E8A80008E218 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2DACECBD1A794CD800FEC3CE /* Debug */ = {
@@ -387,6 +468,34 @@
 			};
 			name = Release;
 		};
+		8EB836841C46E8A80008E218 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = HexColorsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.MariusLandwehr.HexColorsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8EB836851C46E8A80008E218 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = HexColorsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.MariusLandwehr.HexColorsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -416,6 +525,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8EB836861C46E8A80008E218 /* Build configuration list for PBXNativeTarget "HexColorsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EB836841C46E8A80008E218 /* Debug */,
+				8EB836851C46E8A80008E218 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
