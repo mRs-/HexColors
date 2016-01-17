@@ -1,7 +1,7 @@
 HexColors
 =========================
 ![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/HexColors/badge.png)
-
+![Badge w/ Version](https://travis-ci.org/mRs-/HexColors.svg)
 ![Badge w/ Version](https://cocoapod-badges.herokuapp.com/p/HexColors/badge.png)
 
 HexColors is drop in category for HexColor Support for NSColor and UIColor. Support for HexColors with prefixed # and without.
