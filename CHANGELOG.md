@@ -8,9 +8,11 @@ All notable changes to this project will be documented in this file.
 * Nullability when you create a HexColor
 * Unit-Tests added
 * Travis-CI added
+* tvOS support added
 
 ## [3.0.0] (https://github.com/mRs-/HexColors/tree/3.0.0)
 * changed the prefix of the method calls to _hx for collision avoidiance
+* watchOS support added
 
 ## [2.3.1] (https://github.com/mRs-/HexColors/tree/2.3.1)
 * small bug fixes
