@@ -51,7 +51,7 @@
     }
     
     // check for 3 character HexStrings
-    hexString = [[self class] hx_hexStringTransformFromThreeCharacters:hexString];
+    hexString = [hexString hx_hexStringTransformFromThreeCharacters];
     
     NSString *redHex    = [NSString stringWithFormat:@"0x%@", [hexString substringWithRange:NSMakeRange(1, 2)]];
     unsigned redInt = [[self class] hx_hexValueToUnsigned:redHex];
@@ -84,20 +84,6 @@
     return color;
 }
 
-+ (NSString *)hx_hexStringTransformFromThreeCharacters:(NSString *)hexString
-{
-    if(hexString.length == 4)
-    {
-        hexString = [NSString stringWithFormat:@"#%1$c%1$c%2$c%2$c%3$c%3$c",
-                     [hexString characterAtIndex:1],
-                     [hexString characterAtIndex:2],
-                     [hexString characterAtIndex:3]];
-        
-    }
-    
-    return hexString;
-}
-
 + (unsigned)hx_hexValueToUnsigned:(NSString *)hexValue
 {
     unsigned value = 0;
@@ -108,5 +94,23 @@
     return value;
 }
 
+
+@end
+
+@implementation NSString (hx_StringTansformer)
+
+- (NSString *)hx_hexStringTransformFromThreeCharacters;
+{
+    if(self.length == 4)
+    {
+        NSString * hexString = [NSString stringWithFormat:@"#%1$c%1$c%2$c%2$c%3$c%3$c",
+                                [self characterAtIndex:1],
+                                [self characterAtIndex:2],
+                                [self characterAtIndex:3]];
+        return hexString;
+    }
+    
+    return self;
+}
 
 @end
