@@ -33,6 +33,7 @@
  @return UIColor / NSColor or nil
  */
 + (nullable HXColor *)hx_colorWithHexString:(nonnull NSString *)hexString;
+
 /**
  Same implementation as hx_colorWithHexString but you can hand in a normal alpha value from 0 to 1
  
@@ -42,7 +43,38 @@
  */
 + (nullable HXColor *)hx_colorWithHexString:(nonnull NSString *)hexString alpha:(CGFloat)alpha;
 
+/**
+ Don't like to devide by 255 to get a value between 0 to 1 for creating a color? This helps you create 
+ a UIColor without the hassle, which leads to cleaner code
+ 
+ @param red NSInteger hand in a value for red between 0 and 255
+ @param green NSInteger hand in a value for green between 0 and 255
+ @param blue NSInteger hand in a value for blue between 0 and 255
+ @return UIColor / NSColor
+ */
 + (nonnull HXColor *)hx_colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue;
+
+/**
+ Same implementation as hx_colorWith8BitRed:green:blue but you can hand in a normal alpha value from 0 to 1
+ 
+ @param red NSInteger hand in a value for red between 0 and 255
+ @param green NSInteger hand in a value for green between 0 and 255
+ @param blue NSInteger hand in a value for blue between 0 and 255
+ @param alpha CGFloat from 0 to 1
+ @return UIColor / NSColor
+ */
 + (nonnull HXColor *)hx_colorWith8BitRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha;
+
+@end
+
+
+@interface NSString (hx_StringTansformer)
+
+/**
+ Checks for a short hexString like #fff and transform it to a long hexstring like #ffffff
+ 
+ @return hexString NSString a normal hexString with the length of 7 characters like #ffffff or the initial string
+ */
+- (nonnull NSString *)hx_hexStringTransformFromThreeCharacters;
 
 @end
