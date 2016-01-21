@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 `HexColors` adheres to [Semantic Versioning](http://semver.org/).
 
 ---
+## [3.1.1] (https://github.com/mRs-/HexColors/tree/3.1.1)
+* added cocoadocs
 
 ## [3.1.0] (https://github.com/mRs-/HexColors/tree/3.1.0)
 * Nullability when you create a HexColor
