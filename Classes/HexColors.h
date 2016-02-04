@@ -32,7 +32,18 @@
  @param hexString NSString hex string for color generation
  @return UIColor / NSColor or nil
  */
-+ (nullable HXColor *)hx_colorWithHexString:(nonnull NSString *)hexString;
++ (nullable HXColor *)hx_colorWithHexString:(nonnull NSString *)hexString __attribute__ ((deprecated("Use '-hx_colorWithHexRGBAString' instead.")));
+
+/**
+ Creates a UIColor or NSColor from a HexString like #fff, #ffff, #ff00aa or #ff00aaee.
+ With complete support for short hand hex values, short hand with short alpha value, full
+ hex values and full hex values with alpha. To include alpha with the hex string append the values
+ at the end of the string.
+ 
+ @param hexString NSString hex string for color generation
+ @return UIColor / NSColor or nil
+ */
++ (nullable HXColor *)hx_colorWithHexRGBAString:(nonnull NSString *)hexString;
 
 /**
  Same implementation as hx_colorWithHexString but you can hand in a normal alpha value from 0 to 1
@@ -41,7 +52,16 @@
  @param alpha CGFloat from 0 to 1
  @return UIColor / NSColor or nil
  */
-+ (nullable HXColor *)hx_colorWithHexString:(nonnull NSString *)hexString alpha:(CGFloat)alpha;
++ (nullable HXColor *)hx_colorWithHexString:(nonnull NSString *)hexString alpha:(CGFloat)alpha __attribute__ ((deprecated("Use '-hx_colorWithHexRGBAString :alpha' instead.")));
+
+/**
+ Same implementation as hx_colorWithHexRGBAString but you can hand in a normal alpha value from 0 to 1
+ 
+ @param hexString NSString hex string for color generation
+ @param alpha CGFloat from 0 to 1
+ @return UIColor / NSColor or nil
+ */
++ (nullable HXColor *)hx_colorWithHexRGBAString:(nonnull NSString *)hexString alpha:(CGFloat)alpha;
 
 /**
  Don't like to devide by 255 to get a value between 0 to 1 for creating a color? This helps you create 
