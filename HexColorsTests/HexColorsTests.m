@@ -53,6 +53,14 @@
     NSAssert(falseColor == nil, @"String should not create a valid color");
 }
 
+- (void)testLongRGBASyntaxWithHash {
+    
+    UIColor *whiteColor = [UIColor whiteColor];
+    UIColor *whiteHexColor = [UIColor hx_colorWithHexRGBAString:@"#ffffffff"];
+    
+    NSAssert(whiteColor != whiteHexColor, @"hexColor is not equal to the white color");
+}
+
 - (void)testShortSyntaxWithHash {
     
     UIColor *whiteColor = [UIColor whiteColor];
