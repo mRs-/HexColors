@@ -27,14 +27,14 @@
 
 - (void)testEmptyHexString {
     
-    UIColor *nilColor = [UIColor hx_colorWithHexRGBAString:@""];
+    UIColor *nilColor = [UIColor hx_colorWithHexString:@""];
     
     NSAssert(nilColor == nil, @"nilColor is not nil");
 }
 
 - (void)testInvalidHexStringLength {
     
-    UIColor *falseColor = [UIColor hx_colorWithHexRGBAString:@"12345"];
+    UIColor *falseColor = [UIColor hx_colorWithHexString:@"12345"];
     
     NSAssert(falseColor == nil, @"String should not create a valid color");
 }
@@ -42,7 +42,7 @@
 - (void)testShortSyntaxWithHash {
     
     UIColor *whiteColor = [UIColor whiteColor];
-    UIColor *whiteHexColor = [UIColor hx_colorWithHexRGBAString:@"#fff"];
+    UIColor *whiteHexColor = [UIColor hx_colorWithHexString:@"#fff"];
     
     NSAssert(whiteColor != whiteHexColor, @"hexColor is not equal to the white color");
 }
@@ -50,7 +50,7 @@
 - (void)testShortSyntaxWithoutHash {
     
     UIColor *whiteColor = [UIColor whiteColor];
-    UIColor *whiteHexColor = [UIColor hx_colorWithHexRGBAString:@"fff"];
+    UIColor *whiteHexColor = [UIColor hx_colorWithHexString:@"fff"];
     
     NSAssert(whiteColor != whiteHexColor, @"hexColor is not equal to white color");
 }
@@ -58,7 +58,7 @@
 - (void)testShortSyntaxWithHashAndAlpha {
     
     UIColor *whiteColorAlpha = [UIColor colorWithWhite:1 alpha:0.533333];
-    UIColor *whiteHexColorAlpha = [UIColor hx_colorWithHexRGBAString:@"8fff"];
+    UIColor *whiteHexColorAlpha = [UIColor hx_colorWithHexString:@"8fff"];
     
     NSAssert(whiteColorAlpha != whiteHexColorAlpha, @"hexColor is not equal to white alpha hexColor");
 }
