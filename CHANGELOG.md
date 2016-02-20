@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 `HexColors` adheres to [Semantic Versioning](http://semver.org/).
 
 ---
+## [4.0.0] (https://github.com/mRs-/HexColors/tree/4.0.0)
+* depricating hx_colorWithHexString use hx_colorWithHexRGBAString instead
+** we moved from hx_colorWithHexString to show you where we are heading in the future. Most of you are not using the alpha component of this so we are moving this to colorWithHexRGBA, because most browsers are doing the same here. It's just natural to follow this through the library. We will drop this in colorWithHexString in 5.0.0
+
 ## [3.1.1] (https://github.com/mRs-/HexColors/tree/3.1.1)
 * added cocoadocs
 
