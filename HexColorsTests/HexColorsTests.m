@@ -32,6 +32,13 @@
     NSAssert(nilColor == nil, @"nilColor is not nil");
 }
 
+- (void)testEmptyHexStringRGBA {
+    
+    UIColor *nilColor = [UIColor hx_colorWithHexRGBAString:@""];
+    
+    NSAssert(nilColor == nil, @"nilColor is not nil");
+}
+
 - (void)testInvalidHexStringLength {
     
     UIColor *falseColor = [UIColor hx_colorWithHexString:@"12345"];
@@ -39,10 +46,33 @@
     NSAssert(falseColor == nil, @"String should not create a valid color");
 }
 
+- (void)testInvalidHexStringRGBSLength {
+    
+    UIColor *falseColor = [UIColor hx_colorWithHexRGBAString:@"12345"];
+    
+    NSAssert(falseColor == nil, @"String should not create a valid color");
+}
+
+- (void)testLongRGBASyntaxWithHash {
+    
+    UIColor *whiteColor = [UIColor whiteColor];
+    UIColor *whiteHexColor = [UIColor hx_colorWithHexRGBAString:@"#ffffffff"];
+    
+    NSAssert(whiteColor != whiteHexColor, @"hexColor is not equal to the white color");
+}
+
 - (void)testShortSyntaxWithHash {
     
     UIColor *whiteColor = [UIColor whiteColor];
     UIColor *whiteHexColor = [UIColor hx_colorWithHexString:@"#fff"];
+    
+    NSAssert(whiteColor != whiteHexColor, @"hexColor is not equal to the white color");
+}
+
+- (void)testShortRGBASyntaxWithHash {
+    
+    UIColor *whiteColor = [UIColor whiteColor];
+    UIColor *whiteHexColor = [UIColor hx_colorWithHexRGBAString:@"#fff"];
     
     NSAssert(whiteColor != whiteHexColor, @"hexColor is not equal to the white color");
 }
@@ -55,10 +85,26 @@
     NSAssert(whiteColor != whiteHexColor, @"hexColor is not equal to white color");
 }
 
+- (void)testShortRGBASyntaxWithoutHash {
+    
+    UIColor *whiteColor = [UIColor whiteColor];
+    UIColor *whiteHexColor = [UIColor hx_colorWithHexRGBAString:@"fff"];
+    
+    NSAssert(whiteColor != whiteHexColor, @"hexColor is not equal to white color");
+}
+
 - (void)testShortSyntaxWithHashAndAlpha {
     
     UIColor *whiteColorAlpha = [UIColor colorWithWhite:1 alpha:0.533333];
     UIColor *whiteHexColorAlpha = [UIColor hx_colorWithHexString:@"8fff"];
+    
+    NSAssert(whiteColorAlpha != whiteHexColorAlpha, @"hexColor is not equal to white alpha hexColor");
+}
+
+- (void)testShortRGBASyntaxWithHashAndAlpha {
+    
+    UIColor *whiteColorAlpha = [UIColor colorWithWhite:1 alpha:0.533333];
+    UIColor *whiteHexColorAlpha = [UIColor hx_colorWithHexRGBAString:@"8fff"];
     
     NSAssert(whiteColorAlpha != whiteHexColorAlpha, @"hexColor is not equal to white alpha hexColor");
 }
