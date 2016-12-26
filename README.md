@@ -4,70 +4,46 @@ HexColors
 ![Badge w/ Version](https://travis-ci.org/mRs-/HexColors.svg)
 ![Badge w/ Version](https://cocoapod-badges.herokuapp.com/p/HexColors/badge.png)
 
-HexColors is drop in category for HexColor Support for NSColor and UIColor. Support for HexColors with prefixed # and without.
+HexColors is an extension for UIColor and NSColor to support for creating colors from a hex string like #FF0088 or 8844FF. Completely rewritten in Swift 3!
 
-#RELEASE 3.0.0
-Popular request was to pre-fix the function calls because of better support of different libraries and dependencies. All functions are now prefixed with hx_
+If you want to use this in Objective-C jump to the 3.X version Tag.
+
+#RELEASE 4.0.0
+Completely rewritten in Swift 3 to get the real magic going on!
 
 #Example iOS
-##objective-c##
-``` objective-c
-// with hash
-UIColor *colorWithHex = [UIColor hx_colorWithHexString:@"#ff8942"];
-
-// without hash
-UIColor *secondColorWithHex = [UIColor hx_colorWithHexString:@"ff8942"];
-
-// short handling
-UIColor *shortColorWithHex = [UIColor hx_colorWithHexString:@"fff"];
-```
-##swift##
 ``` swift
 // with hash
-let colorWithHex = UIColor.hx_colorWithHexString("#ff8942")
+let colorWithHex = UIColor(hex: "#ff8942")
 
 // without hash
-let secondColorWithHex = UIColor.hx_colorWithHexString("ff8942")
+let secondColorWithHex = UIColor(hex: "ff8942")
 
 // short handling
-let shortColorWithHex = UIColor.hx_colorWithHexString("fff")
+let shortColorWithHex = UIColor(hex: "fff")
 ```
 
-#Example Mac OS X
-``` objective-c
-// with hash
-NSColor *colorWithHex = [NSColor hx_colorWithHexString:@"#ff8942"];
-
-// wihtout hash
-NSColor *secondColorWithHex = [NSColor hx_colorWithHexString:@"ff8942"];
-
-// short handling
-NSColor *shortColorWithHex = [NSColor hx_colorWithHexString:@"fff"];
-```
-##swift##
+#Example macOS
 ``` swift
 // with hash
-let colorWithHex = NSColor.hx_colorWithHexString("#ff8942")
+let colorWithHex = NSColor(hex: "#ff8942")
 
 // without hash
-let secondColorWithHex = NSColor.hx_colorWithHexString("ff8942")
+let secondColorWithHex = NSColor(hex: "ff8942")
 
 // short handling
-let shortColorWithHex = NSColor.hx_colorWithHexString("fff")
+let shortColorWithHex = NSColor(hex: "fff")
 ```
 
 #Installation
-* `#import "HexColors.h"` where you want to use easy as pie HexColors
 * `pod install HexColors`
 * or just drag the source files in your project
 
 ##Requirements
-HexColors requires [iOS 5.0](http://developer.apple.com/library/ios/#releasenotes/General/WhatsNewIniPhoneOS/Articles/iPhoneOS4.html) and above, and Mac OS X 10.6
+HexColors requires **>= iOS 8.0** and **>=macOS 10.9**.
 
 ##Credits
 HexColors was created by [Marius Landwehr](https://github.com/mRs-) because of the pain recalculating Hex values to RGB.
-
-HexColors was ported to Mac OS X by [holgersindbaek](https://github.com/holgersindbaek).
 
 ##Creator
 [Marius Landwehr](https://github.com/mRs-) [@mariusLAN](https://twitter.com/mariusLAN)
