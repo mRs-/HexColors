@@ -1,5 +1,8 @@
-language: swift
+language: objective-c
 osx_image: xcode8.2
 xcode_project: HexColors.xcodeproj
 xcode_scheme: HexColors-iOS-Tests
 xcode_sdk: iphonesimulator10.2
+
+script:
+    - xcodebuild test -scheme HexColors-iOS-Tests
