@@ -1,8 +1,9 @@
 HexColors
 =========================
 ![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/HexColors/badge.png)
-![Badge w/ Version](https://travis-ci.org/mRs-/HexColors.svg)
 ![Badge w/ Version](https://cocoapod-badges.herokuapp.com/p/HexColors/badge.png)
+![Badge w/ Version](https://travis-ci.org/mRs-/HexColors.svg)
+[![codecov](https://codecov.io/gh/mRs-/HexColors/branch/master/graph/badge.svg)](https://codecov.io/gh/mRs-/HexColors)
 
 HexColors is an extension for UIColor and NSColor to support for creating colors from a hex string like #FF0088 or 8844FF. Completely rewritten in Swift 3!
 
