@@ -1,4 +1,6 @@
-HexColors
+<p align="center">
+    <img src="HexColors.png" alt="HexColors" title="HexColors">
+</p>
 =========================
 ![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/HexColors/badge.png)
 ![Badge w/ Version](https://cocoapod-badges.herokuapp.com/p/HexColors/badge.png)
