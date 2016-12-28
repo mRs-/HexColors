@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		293AB3341E111E88004A4946 /* HexColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HexColors.swift; path = Classes/HexColors.swift; sourceTree = "<group>"; };
+		293AB3341E111E88004A4946 /* HexColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HexColors.swift; path = Sources/HexColors.swift; sourceTree = "<group>"; };
 		293AB33C1E111F0B004A4946 /* HexColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HexColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		293AB33E1E111F0B004A4946 /* HexColors-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HexColors-iOS.h"; sourceTree = "<group>"; };
 		293AB33F1E111F0B004A4946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +48,7 @@
 		293AB3611E111F53004A4946 /* HexColors-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HexColors-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		293AB3661E111F53004A4946 /* HexColors_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColors_macOSTests.swift; sourceTree = "<group>"; };
 		293AB3681E111F53004A4946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29E034CD1E1477EF00BC16BC /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +88,7 @@
 		293AB3161E111E68004A4946 = {
 			isa = PBXGroup;
 			children = (
+				29E034CD1E1477EF00BC16BC /* Package.swift */,
 				293AB3361E111E96004A4946 /* Classes */,
 				293AB33D1E111F0B004A4946 /* HexColors-iOS */,
 				293AB3481E111F0B004A4946 /* HexColors-iOSTests */,
@@ -636,6 +638,7 @@
 				293AB34F1E111F0B004A4946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		293AB3501E111F0B004A4946 /* Build configuration list for PBXNativeTarget "HexColors-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -644,6 +647,7 @@
 				293AB3521E111F0B004A4946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		293AB36A1E111F53004A4946 /* Build configuration list for PBXNativeTarget "HexColors-macOS" */ = {
 			isa = XCConfigurationList;
@@ -652,6 +656,7 @@
 				293AB36C1E111F53004A4946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		293AB36D1E111F53004A4946 /* Build configuration list for PBXNativeTarget "HexColors-macOSTests" */ = {
 			isa = XCConfigurationList;
@@ -660,6 +665,7 @@
 				293AB36F1E111F53004A4946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
