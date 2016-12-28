@@ -11,26 +11,134 @@ import XCTest
 
 class HexColors_macOSTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testCantCreateColorFromEmptyString() {
+        
+        XCTAssertNil(NSColor(hex: ""))
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testCantCreateColorFromEmptyStringWithAlpha() {
+        
+        XCTAssertNil(NSColor(hex: "", alpha: 0.2))
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCantCreateColorFromStringThatsNotHexConform() {
+        
+        XCTAssertNil(NSColor(hex: "Wow what a nice view!"))
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testCantCreateColorFromStringThatsNotHexConformWithAlpha() {
+        
+        XCTAssertNil(NSColor(hex: "Wow what a nice view!", alpha: 0.2))
+    }
+    
+    func testCantCreateColorFromStringWith3CharactersThatAreNotInHexRange() {
+        XCTAssertNil(NSColor(hex: "ZXY"))
+    }
+    
+    func testCantCreateColorFromStringWith3CharactersThatAreNotInHexRangeWithAlpha() {
+        XCTAssertNil(NSColor(hex: "ZXY", alpha: 0.2))
+    }
+    
+    func testCantCreateColorFromStringWith4CharactersThatAreNotInHexRange() {
+        XCTAssertNil(NSColor(hex: "ZXYL"))
+    }
+    
+    func testCantCreateColorFromStringWith4CharactersThatAreNotInHexRangeWithAlpha() {
+        XCTAssertNil(NSColor(hex: "ZXYL", alpha: 0.2))
+    }
+    
+    func testCantCreateColorFromStringWith6CharactersThatAreNotInHexRange() {
+        XCTAssertNil(NSColor(hex: "ZXYLPK"))
+    }
+    
+    func testCantCreateColorFromStringWith6CharactersThatAreNotInHexRangeWithAlpha() {
+        XCTAssertNil(NSColor(hex: "ZXYLPK", alpha: 0.2))
+    }
+    
+    func testCantCreateColorFromStringWith8CharactersThatAreNotInHexRange() {
+        XCTAssertNil(NSColor(hex: "ZXYLPKXX"))
+    }
+    
+    func testCantCreateColorFromStringWith8CharactersThatAreNotInHexRangeWithAlpha() {
+        XCTAssertNil(NSColor(hex: "ZXYLPKXX", alpha: 0.2))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith3Characters() {
+        XCTAssertEqual(NSColor(hex: "FFF"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 1))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith3CharactersAndHashPrefix() {
+        XCTAssertEqual(NSColor(hex: "#FFF"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 1))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith3CharactersAndAlpha() {
+        XCTAssertEqual(NSColor(hex: "FFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith3CharactersAndAlphaAndHashPrefix() {
+        XCTAssertEqual(NSColor(hex: "#FFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith4Characters() {
+        XCTAssertEqual(NSColor(hex: "FFF0"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith4CharactersAndHashPrefix() {
+        XCTAssertEqual(NSColor(hex: "#FFF0"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith4CharactersAndAlpha() {
+        XCTAssertEqual(NSColor(hex: "FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith4CharactersAndAlphaAndHashPrefix() {
+        XCTAssertEqual(NSColor(hex: "#FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith6Characters() {
+        XCTAssertEqual(NSColor(hex: "FF00FF"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 1))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith6CharactersAndHashPrefix() {
+        XCTAssertEqual(NSColor(hex: "#FF00FF"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 1))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith6CharactersAndAlpha() {
+        XCTAssertEqual(NSColor(hex: "FF00FF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith6CharactersAndAlphaAndHashPrefix() {
+        XCTAssertEqual(NSColor(hex: "#FF00FF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith8Characters() {
+        XCTAssertEqual(NSColor(hex: "FF00FF00"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith8CharactersAndHashPrefix() {
+        XCTAssertEqual(NSColor(hex: "#FF00FF00"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith8CharactersAndAlpha() {
+        XCTAssertEqual(NSColor(hex: "FF00FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
+    }
+    
+    func testCanCreateColorFromValidHexStringWith8CharactersAndAlphaAndHashPrefix() {
+        XCTAssertEqual(NSColor(hex: "#FF00FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
+    }
+    
+    func testCanTransformToColorAndBackToHexString() {
+        let hexString = "#ff00ff"
+        let color = NSColor(hex: hexString)
+        
+        XCTAssertEqual(hexString, color?.hex)
+    }
+    
+    func testCanTransformToColorWithAlphaAndBackToHexString() {
+        let hexString = "#ff00ff00"
+        let color = NSColor(hex: hexString)
+        
+        XCTAssertEqual(hexString, color?.hex)
     }
     
 }
