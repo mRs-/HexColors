@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import HexColors_iOS
+@testable import HexColors
 
 class HexColors_iOSTests: XCTestCase {
     

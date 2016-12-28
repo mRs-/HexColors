@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import HexColors_macOS
+@testable import HexColors
 
 class HexColors_macOSTests: XCTestCase {
     
