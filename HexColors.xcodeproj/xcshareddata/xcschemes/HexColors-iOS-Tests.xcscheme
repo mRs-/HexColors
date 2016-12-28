@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,22 +16,13 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8EB8367B1C46E8A80008E218"
-               BuildableName = "HexColorsTests.xctest"
-               BlueprintName = "HexColorsTests"
+               BlueprintIdentifier = "293AB3431E111F0B004A4946"
+               BuildableName = "HexColors-iOSTests.xctest"
+               BlueprintName = "HexColors-iOSTests"
                ReferencedContainer = "container:HexColors.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2DACECA81A794CD800FEC3CE"
-            BuildableName = "HexColors.framework"
-            BlueprintName = "HexColors"
-            ReferencedContainer = "container:HexColors.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
