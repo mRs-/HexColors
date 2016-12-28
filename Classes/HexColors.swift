@@ -21,9 +21,9 @@
 #endif
 
 public extension HexColor {
-    typealias HexString = String
+    typealias Hex = String
     
-    convenience init?(hex string: HexString, alpha: CGFloat? = nil) {
+    convenience init?(hex string: Hex, alpha: CGFloat? = nil) {
         
         guard
             let hexType = Type(from: string),
@@ -38,14 +38,27 @@ public extension HexColor {
         #endif
     }
     
+    var hex: Hex? {
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0, rgb: Int
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        
+        if a == 1 { // no alpha value set, we are returning the short version
+            rgb = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(r*255)<<0
+        } else {
+            rgb = (Int)(r*255)<<24 | (Int)(g*255)<<16 | (Int)(r*255)<<8 | (Int)(a*255)<<0
+        }
+        
+        return String(format: "#%06x", rgb)
+    }
+    
     fileprivate enum `Type` {
         
-        case RGBshort(rgb: HexString)
-        case RGBshortAlpha(rgba: HexString)
-        case RGB(rgb: HexString)
-        case RGBA(rgba: HexString)
+        case RGBshort(rgb: Hex)
+        case RGBshortAlpha(rgba: Hex)
+        case RGB(rgb: Hex)
+        case RGBA(rgba: Hex)
         
-        init?(from hex: HexString) {
+        init?(from hex: Hex) {
             
             var hexString = hex
             hexString.removeHashIfNecessary()
@@ -57,7 +70,7 @@ public extension HexColor {
             self = t
         }
         
-        static func transform(hex string: HexString) -> Type? {
+        static func transform(hex string: Hex) -> Type? {
             switch string.characters.count {
             case 3:
                 return .RGBshort(rgb: string)
@@ -72,7 +85,7 @@ public extension HexColor {
             }
         }
         
-        var value: HexString {
+        var value: Hex {
             switch self {
             case .RGBshort(let rgb):
                 return rgb
