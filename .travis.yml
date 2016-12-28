@@ -5,4 +5,4 @@ xcode_scheme: HexColors-iOS-Tests
 xcode_sdk: iphonesimulator10.2
 
 script:
-    - xcodebuild -project HexColors.xcodeproj -scheme "HexColors-iOS-Tests" -destination "platform=iOS Simulator,name=iPhone\ 6" -sdk iphonesimulator build test
+    - xcodebuild -project HexColors.xcodeproj -scheme "HexColors-iOS-Tests" -destination "platform=iOS Simulator,name=iPhone\ 6,os=10.2" -sdk iphonesimulator build test
