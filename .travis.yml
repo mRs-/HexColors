@@ -1,8 +1,5 @@
 language: objective-c
 osx_image: xcode8.2
-xcode_project: HexColors.xcodeproj
-xcode_scheme: HexColors-iOS-Tests
-xcode_sdk: iphonesimulator10.2
 
 script:
-    - xcodebuild -project HexColors.xcodeproj -scheme "HexColors-iOS-Tests" -destination "platform=iOS Simulator,OS=10.2,name=iPhone 6" -sdk iphonesimulator build test
+    - xcodebuild test -scheme HexColors-iOS-Tests -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 5s,OS=10.2'
