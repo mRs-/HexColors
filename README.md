@@ -11,31 +11,31 @@ HexColors is an extension for UIColor and NSColor to support for creating colors
 
 If you want to use this in Objective-C jump to the 3.X version Tag.
 
-#RELEASE 4.0.0
-Completely rewritten in Swift 3 to get the real magic going on!
+#RELEASE 5.0.0
+Completely new and fresh in Swift 3. 
 
 #Example iOS
 ``` swift
-// with hash
 let colorWithHex = UIColor(hex: "#ff8942")
-
-// without hash
-let secondColorWithHex = UIColor(hex: "ff8942")
-
-// short handling
-let shortColorWithHex = UIColor(hex: "fff")
+let colorWithoutHex = UIColor(hex: "ff8942")
+let colorWithHexAndAlhpa = UIColor(hex: "#ff8942DF")
+let colorWithoutHexAndAlhpa = UIColor(hex: "ff8942DF")
+let shortColorWithHex = UIColor(hex: "#fff")
+let shortColorWithoutHex = UIColor(hex: "fff")
+let shortColorWithHexAndAlpha = UIColor(hex: "#FFFD")
+let shortColorWithoutHexAndAlpha = UIColor(hex: "#FFFD")
 ```
 
 #Example macOS
 ``` swift
-// with hash
 let colorWithHex = NSColor(hex: "#ff8942")
-
-// without hash
-let secondColorWithHex = NSColor(hex: "ff8942")
-
-// short handling
-let shortColorWithHex = NSColor(hex: "fff")
+let colorWithoutHex = NSColor(hex: "ff8942")
+let colorWithHexAndAlhpa = NSColor(hex: "#ff8942DF")
+let colorWithoutHexAndAlhpa = NSColor(hex: "ff8942DF")
+let shortColorWithHex = NSColor(hex: "#fff")
+let shortColorWithoutHex = NSColor(hex: "fff")
+let shortColorWithHexAndAlpha = NSColor(hex: "#FFFD")
+let shortColorWithoutHexAndAlpha = NSColor(hex: "#FFFD")
 ```
 
 #Installation
