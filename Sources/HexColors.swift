@@ -23,10 +23,10 @@
 public extension HexColor {
     typealias Hex = String
     
-    convenience init?(hex string: Hex, alpha: CGFloat? = nil) {
+    convenience init?(_ hex: Hex, with alpha: CGFloat? = nil) {
         
         guard
-            let hexType = Type(from: string),
+            let hexType = Type(from: hex),
             let components = hexType.components() else {
                 return nil
         }
@@ -38,7 +38,8 @@ public extension HexColor {
         #endif
     }
     
-    var hex: Hex? {
+    /// The string hex value representation of the current color
+    var hex: Hex {
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0, rgb: Int
         getRed(&r, green: &g, blue: &b, alpha: &a)
         
