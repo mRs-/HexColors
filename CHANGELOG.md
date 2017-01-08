@@ -3,9 +3,16 @@ All notable changes to this project will be documented in this file.
 `HexColors` adheres to [Semantic Versioning](http://semver.org/).
 
 ---
+## [5.0.0] (https://github.com/mRs-/HexColors/tree/5.0.0)
+* Completetly rewritten in Swift 3.0
+* hx_colorWithHexString / hx_colorWithHexRGBAString are not working any more
+* breaking API-Changes
+* Create UI/NSColor now with `UIColor("#FF00FF")` or `NSColor("#00FFFF")` 
+* For Objective-C support switch to Version [4.0.0] (https://github.com/mRs-/HexColors/tree/5.0.0)
+
 ## [4.0.0] (https://github.com/mRs-/HexColors/tree/4.0.0)
 * depricating hx_colorWithHexString use hx_colorWithHexRGBAString instead
-** we moved from hx_colorWithHexString to show you where we are heading in the future. Most of you are not using the alpha component of this so we are moving this to colorWithHexRGBA, because most browsers are doing the same here. It's just natural to follow this through the library. We will drop this in colorWithHexString in 5.0.0
+** we moved from hx_colorWithHexString to show you where we are heading in the future. Most of you are not using the alpha component of this so we are moving this to colorWithHexRGBA, because most browsers are doing the same here. It's just natural to follow this through the library.
 
 ## [3.1.1] (https://github.com/mRs-/HexColors/tree/3.1.1)
 * added cocoadocs
