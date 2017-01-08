@@ -2,9 +2,12 @@
     <img src="HexColors.png" alt="HexColors" title="HexColors">
 </p>
 =========================
-![Badge w/ Version](https://cocoapod-badges.herokuapp.com/v/HexColors/badge.png)
-![Badge w/ Version](https://cocoapod-badges.herokuapp.com/p/HexColors/badge.png)
-![Badge w/ Version](https://travis-ci.org/mRs-/HexColors.svg)
+[![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS-lightgrey.svg)](https://github.com/mrs-/HexColors)
+[![Xcode](https://img.shields.io/badge/Xcode-8.0-blue.svg)](https://developer.apple.com/xcode)
+[![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)](https://swift.org)
+[![Downloads Month](https://img.shields.io/cocoapods/dm/HexColors.svg)]
+![Cocoapods](https://cocoapod-badges.herokuapp.com/v/HexColors/badge.png)
+[![Build Status](https://travis-ci.org/mRs-/HexColors.svg?branch=master)](https://travis-ci.org/mrs-/HexColors)
 [![codecov](https://codecov.io/gh/mRs-/HexColors/branch/master/graph/badge.svg)](https://codecov.io/gh/mRs-/HexColors)
 
 HexColors is an extension for UIColor and NSColor to support for creating colors from a hex string like #FF0088 or 8844FF and back to a String. Completely rewritten in Swift 3!
