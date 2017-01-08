@@ -51,7 +51,7 @@ public extension HexColor {
         return String(format: "#%06x", rgb)
     }
     
-    fileprivate enum `Type` {
+    private enum `Type` {
         
         case RGBshort(rgb: Hex)
         case RGBshortAlpha(rgba: Hex)
@@ -140,7 +140,7 @@ public extension HexColor {
     }
 }
 
-fileprivate extension String {
+private extension String {
     
     mutating func removeHashIfNecessary() {
         if hasPrefix("#") {
