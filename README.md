@@ -88,7 +88,7 @@ import PackageDescription
 let package = Package(
     name: "YourPackageName",
     dependencies: [
-        .Package(url: "htthttps://github.com/mRs-/HexColors", majorVersion: 5),
+        .Package(url: "https://github.com/mRs-/HexColors", majorVersion: 5),
     ]
 )
 ```
