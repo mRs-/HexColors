@@ -10,135 +10,133 @@ import XCTest
 @testable import HexColors
 
 class HexColors_macOSTests: XCTestCase {
+  
+  func testCantCreateColorFromEmptyString() {
+    XCTAssertNil(NSColor(""))
+  }
+  
+  func testCantCreateColorFromEmptyStringWithAlpha() {
+    XCTAssertNil(NSColor("", alpha: 0.2))
+  }
+  
+  func testCantCreateColorFromStringThatsNotHexConform() {
     
-    func testCantCreateColorFromEmptyString() {
-        
-        XCTAssertNil(NSColor(hex: ""))
-    }
+    XCTAssertNil(NSColor("Wow what a nice view!"))
+  }
+  
+  func testCantCreateColorFromStringThatsNotHexConformWithAlpha() {
     
-    func testCantCreateColorFromEmptyStringWithAlpha() {
-        
-        XCTAssertNil(NSColor(hex: "", alpha: 0.2))
-    }
+    XCTAssertNil(NSColor("Wow what a nice view!", alpha: 0.2))
+  }
+  
+  func testCantCreateColorFromStringWith3CharactersThatAreNotInHexRange() {
+    XCTAssertNil(NSColor("ZXY"))
+  }
+  
+  func testCantCreateColorFromStringWith3CharactersThatAreNotInHexRangeWithAlpha() {
+    XCTAssertNil(NSColor("ZXY", alpha: 0.2))
+  }
+  
+  func testCantCreateColorFromStringWith4CharactersThatAreNotInHexRange() {
+    XCTAssertNil(NSColor("ZXYL"))
+  }
+  
+  func testCantCreateColorFromStringWith4CharactersThatAreNotInHexRangeWithAlpha() {
+    XCTAssertNil(NSColor("ZXYL", alpha: 0.2))
+  }
+  
+  func testCantCreateColorFromStringWith6CharactersThatAreNotInHexRange() {
+    XCTAssertNil(NSColor("ZXYLPK"))
+  }
+  
+  func testCantCreateColorFromStringWith6CharactersThatAreNotInHexRangeWithAlpha() {
+    XCTAssertNil(NSColor("ZXYLPK", alpha: 0.2))
+  }
+  
+  func testCantCreateColorFromStringWith8CharactersThatAreNotInHexRange() {
+    XCTAssertNil(NSColor("ZXYLPKXX"))
+  }
+  
+  func testCantCreateColorFromStringWith8CharactersThatAreNotInHexRangeWithAlpha() {
+    XCTAssertNil(NSColor("ZXYLPKXX", alpha: 0.2))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith3Characters() {
+    XCTAssertEqual(NSColor("FFF"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 1))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith3CharactersAndHashPrefix() {
+    XCTAssertEqual(NSColor("#FFF"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 1))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith3CharactersAndAlpha() {
+    XCTAssertEqual(NSColor("FFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith3CharactersAndAlphaAndHashPrefix() {
+    XCTAssertEqual(NSColor("#FFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith4Characters() {
+    XCTAssertEqual(NSColor("FFF0"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith4CharactersAndHashPrefix() {
+    XCTAssertEqual(NSColor("#FFF0"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith4CharactersAndAlpha() {
+    XCTAssertEqual(NSColor("FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith4CharactersAndAlphaAndHashPrefix() {
+    XCTAssertEqual(NSColor("#FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith6Characters() {
+    XCTAssertEqual(NSColor("FF00FF"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 1))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith6CharactersAndHashPrefix() {
+    XCTAssertEqual(NSColor("#FF00FF"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 1))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith6CharactersAndAlpha() {
+    XCTAssertEqual(NSColor("FF00FF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith6CharactersAndAlphaAndHashPrefix() {
+    XCTAssertEqual(NSColor("#FF00FF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith8Characters() {
+    XCTAssertEqual(NSColor("FF00FF00"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith8CharactersAndHashPrefix() {
+    XCTAssertEqual(NSColor("#FF00FF00"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith8CharactersAndAlpha() {
+    XCTAssertEqual(NSColor("FF00FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
+  }
+  
+  func testCanCreateColorFromValidHexStringWith8CharactersAndAlphaAndHashPrefix() {
+    XCTAssertEqual(NSColor("#FF00FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
+  }
+  
+  func testCanTransformToColorAndBackToHexString() {
+    let hexString = "#ff00ff"
+    let color = NSColor(hexString)
     
-    func testCantCreateColorFromStringThatsNotHexConform() {
-        
-        XCTAssertNil(NSColor(hex: "Wow what a nice view!"))
-    }
+    XCTAssertEqual(hexString, color?.hex)
+  }
+  
+  func testCanTransformToColorWithAlphaAndBackToHexString() {
+    let hexString = "#ff00ff00"
+    let color = NSColor(hexString)
     
-    func testCantCreateColorFromStringThatsNotHexConformWithAlpha() {
-        
-        XCTAssertNil(NSColor(hex: "Wow what a nice view!", alpha: 0.2))
-    }
-    
-    func testCantCreateColorFromStringWith3CharactersThatAreNotInHexRange() {
-        XCTAssertNil(NSColor(hex: "ZXY"))
-    }
-    
-    func testCantCreateColorFromStringWith3CharactersThatAreNotInHexRangeWithAlpha() {
-        XCTAssertNil(NSColor(hex: "ZXY", alpha: 0.2))
-    }
-    
-    func testCantCreateColorFromStringWith4CharactersThatAreNotInHexRange() {
-        XCTAssertNil(NSColor(hex: "ZXYL"))
-    }
-    
-    func testCantCreateColorFromStringWith4CharactersThatAreNotInHexRangeWithAlpha() {
-        XCTAssertNil(NSColor(hex: "ZXYL", alpha: 0.2))
-    }
-    
-    func testCantCreateColorFromStringWith6CharactersThatAreNotInHexRange() {
-        XCTAssertNil(NSColor(hex: "ZXYLPK"))
-    }
-    
-    func testCantCreateColorFromStringWith6CharactersThatAreNotInHexRangeWithAlpha() {
-        XCTAssertNil(NSColor(hex: "ZXYLPK", alpha: 0.2))
-    }
-    
-    func testCantCreateColorFromStringWith8CharactersThatAreNotInHexRange() {
-        XCTAssertNil(NSColor(hex: "ZXYLPKXX"))
-    }
-    
-    func testCantCreateColorFromStringWith8CharactersThatAreNotInHexRangeWithAlpha() {
-        XCTAssertNil(NSColor(hex: "ZXYLPKXX", alpha: 0.2))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith3Characters() {
-        XCTAssertEqual(NSColor(hex: "FFF"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 1))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith3CharactersAndHashPrefix() {
-        XCTAssertEqual(NSColor(hex: "#FFF"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 1))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith3CharactersAndAlpha() {
-        XCTAssertEqual(NSColor(hex: "FFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith3CharactersAndAlphaAndHashPrefix() {
-        XCTAssertEqual(NSColor(hex: "#FFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith4Characters() {
-        XCTAssertEqual(NSColor(hex: "FFF0"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith4CharactersAndHashPrefix() {
-        XCTAssertEqual(NSColor(hex: "#FFF0"), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith4CharactersAndAlpha() {
-        XCTAssertEqual(NSColor(hex: "FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith4CharactersAndAlphaAndHashPrefix() {
-        XCTAssertEqual(NSColor(hex: "#FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 1, blue: 1, alpha: 0.2))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith6Characters() {
-        XCTAssertEqual(NSColor(hex: "FF00FF"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 1))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith6CharactersAndHashPrefix() {
-        XCTAssertEqual(NSColor(hex: "#FF00FF"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 1))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith6CharactersAndAlpha() {
-        XCTAssertEqual(NSColor(hex: "FF00FF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith6CharactersAndAlphaAndHashPrefix() {
-        XCTAssertEqual(NSColor(hex: "#FF00FF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith8Characters() {
-        XCTAssertEqual(NSColor(hex: "FF00FF00"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith8CharactersAndHashPrefix() {
-        XCTAssertEqual(NSColor(hex: "#FF00FF00"), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith8CharactersAndAlpha() {
-        XCTAssertEqual(NSColor(hex: "FF00FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
-    }
-    
-    func testCanCreateColorFromValidHexStringWith8CharactersAndAlphaAndHashPrefix() {
-        XCTAssertEqual(NSColor(hex: "#FF00FFFF", alpha: 0.2), NSColor(calibratedRed: 1, green: 0, blue: 1, alpha: 0.2))
-    }
-    
-    func testCanTransformToColorAndBackToHexString() {
-        let hexString = "#ff00ff"
-        let color = NSColor(hex: hexString)
-        
-        XCTAssertEqual(hexString, color?.hex)
-    }
-    
-    func testCanTransformToColorWithAlphaAndBackToHexString() {
-        let hexString = "#ff00ff00"
-        let color = NSColor(hex: hexString)
-        
-        XCTAssertEqual(hexString, color?.hex)
-    }
-    
+    XCTAssertEqual(hexString, color?.hex)
+  }
+  
 }
