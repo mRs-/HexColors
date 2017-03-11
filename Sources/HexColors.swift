@@ -42,12 +42,12 @@ public extension HexColor {
     getRed(&r, green: &g, blue: &b, alpha: &a)
     
     if a == 1 { // no alpha value set, we are returning the short version
-      rgb = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(r*255)<<0
+      rgb = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+      return String(format: "#%06x", rgb)
     } else {
-      rgb = (Int)(r*255)<<24 | (Int)(g*255)<<16 | (Int)(r*255)<<8 | (Int)(a*255)<<0
+      rgb = (Int)(r*255)<<24 | (Int)(g*255)<<16 | (Int)(b*255)<<8 | (Int)(a*255)<<0
+      return String(format: "#%08x", rgb)
     }
-    
-    return String(format: "#%06x", rgb)
   }
   
   private enum `Type` {
