@@ -14,8 +14,8 @@ HexColors is an extension for UIColor and NSColor to support for creating colors
 
 If you want to use this in Objective-C jump to the 4.X version tag.
 
-#RELEASE 5.0.0
-Completely new and fresh in Swift 3. 
+#RELEASE 5.0.1
+Copy paste Typo Fixxed.
 
 #Examples
 How to use HexColors in the different systems.

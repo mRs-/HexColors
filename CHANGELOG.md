@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 `HexColors` adheres to [Semantic Versioning](http://semver.org/).
 
 ---
+## [5.0.1] (https://github.com/mRs-/HexColors/tree/5.0.1)
+* Fixxed a copy paste bug
+
 ## [5.0.0] (https://github.com/mRs-/HexColors/tree/5.0.0)
 * Completetly rewritten in Swift 3.0
 * hx_colorWithHexString / hx_colorWithHexRGBAString are not working any more
