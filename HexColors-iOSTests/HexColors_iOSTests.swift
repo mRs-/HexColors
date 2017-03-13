@@ -128,16 +128,34 @@ class HexColors_iOSTests: XCTestCase {
   }
   
   func testCanTransformToColorAndBackToHexString() {
-    let hexString = "#ff00ff"
-    let color = UIColor(hexString)
-    
-    XCTAssertEqual(hexString, color?.hex)
+    let hexStrings = [
+        "#ff0000",
+        "#00ff12",
+        "#12aaff",
+        "#00cc99",
+        "#44aadd",
+        "#dd12ff"
+    ]
+
+    for string in hexStrings {
+        let color = UIColor(string)
+        XCTAssertEqual(string, color?.hex)
+    }
   }
   
   func testCanTransformToColorWithAlphaAndBackToHexString() {
-    let hexString = "#ff00ff00"
-    let color = UIColor(hexString)
-    
-    XCTAssertEqual(hexString, color?.hex)
+    let hexStrings = [
+        "#ff000012",
+        "#00ff1234",
+        "#12aaff56",
+        "#00cc9978",
+        "#44aadd90",
+        "#dd12ffab"
+    ]
+
+    for string in hexStrings {
+        let color = UIColor(string)
+        XCTAssertEqual(string, color?.hex)
+    }
   }
 }
