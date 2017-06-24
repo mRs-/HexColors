@@ -50,10 +50,17 @@ public extension HexColor {
     getRed(&r, green: &g, blue: &b, alpha: &a)
     
     if a == 1 { // no alpha value set, we are returning the short version
-      rgb = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+        let rValue = (Int)(r*255)<<16
+        let gValue = (Int)(g*255)<<8
+        let bValue = (Int)(b*255)<<0
+      rgb = rValue | gValue | bValue
       return String(format: "#%06x", rgb)
     } else {
-      rgb = (Int)(r*255)<<24 | (Int)(g*255)<<16 | (Int)(b*255)<<8 | (Int)(a*255)<<0
+        let rValue = (Int)(r*255)<<24
+        let gValue = (Int)(g*255)<<16
+        let bValue = (Int)(b*255)<<8
+        let aValue = (Int)(a*255)<<0
+      rgb = rValue | gValue | bValue | aValue
       return String(format: "#%08x", rgb)
     }
   }
