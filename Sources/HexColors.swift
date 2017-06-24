@@ -22,8 +22,16 @@
 
 public extension HexColor {
   typealias Hex = String
+
+    @objc convenience init?(hex: String, alpha: CGFloat) {
+        self.init(Hex(hex), alpha: alpha)
+    }
+   
+    @objc convenience init?(hex: String) {
+        self.init(Hex(hex))
+    }
   
-  convenience init?(_ hex: Hex, alpha: CGFloat? = nil) {
+  @nonobjc convenience init?(_ hex: Hex, alpha: CGFloat? = nil) {
     
     guard let hexType = Type(from: hex), let components = hexType.components() else {
         return nil
