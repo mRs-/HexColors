@@ -50,6 +50,7 @@
 		293AB3681E111F53004A4946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295A522F1F88D20900C359F3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		295A52301F88D34400C359F3 /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
+		295A52311F88D52C00C359F3 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		29E034CD1E1477EF00BC16BC /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,14 +92,15 @@
 			isa = PBXGroup;
 			children = (
 				295A52301F88D34400C359F3 /* .swift-version */,
-				295A522F1F88D20900C359F3 /* README.md */,
-				29E034CD1E1477EF00BC16BC /* Package.swift */,
+				295A52311F88D52C00C359F3 /* CHANGELOG.md */,
 				293AB3361E111E96004A4946 /* Classes */,
 				293AB33D1E111F0B004A4946 /* HexColors-iOS */,
 				293AB3481E111F0B004A4946 /* HexColors-iOSTests */,
 				293AB35A1E111F53004A4946 /* HexColors-macOS */,
 				293AB3651E111F53004A4946 /* HexColors-macOSTests */,
+				29E034CD1E1477EF00BC16BC /* Package.swift */,
 				293AB3201E111E68004A4946 /* Products */,
+				295A522F1F88D20900C359F3 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
