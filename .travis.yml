@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode9
 script: 
-  - xctool -project HexColors.xcodeproj -scheme HexColors-iOS-Tests -sdk iphonesimulator run-tests
+  - xctool -project HexColors.xcodeproj -scheme HexColors-iOS-Tests -sdk iphonesimulator11.0 run-tests
 after_success:
   - bash <(curl -s https://codecov.io/bash)
