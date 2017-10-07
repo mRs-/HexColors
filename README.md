@@ -3,8 +3,8 @@
 </p>
 
 [![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS-lightgrey.svg)](https://github.com/mrs-/HexColors)
-[![Xcode](https://img.shields.io/badge/Xcode-8.0-blue.svg)](https://developer.apple.com/xcode)
-[![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)](https://swift.org)
+[![Xcode](https://img.shields.io/badge/Xcode-9.0-blue.svg)](https://developer.apple.com/xcode)
+[![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg)](https://swift.org)
 ![Downloads Month](https://img.shields.io/cocoapods/dm/HexColors.svg)
 ![Cocoapods](https://cocoapod-badges.herokuapp.com/v/HexColors/badge.png)
 [![Build Status](https://travis-ci.org/mRs-/HexColors.svg?branch=master)](https://travis-ci.org/mrs-/HexColors)
