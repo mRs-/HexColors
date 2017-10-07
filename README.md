@@ -3,8 +3,8 @@
 </p>
 
 [![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20macOS-lightgrey.svg)](https://github.com/mrs-/HexColors)
-[![Xcode](https://img.shields.io/badge/Xcode-8.0-blue.svg)](https://developer.apple.com/xcode)
-[![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)](https://swift.org)
+[![Xcode](https://img.shields.io/badge/Xcode-9.0-blue.svg)](https://developer.apple.com/xcode)
+[![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg)](https://swift.org)
 ![Downloads Month](https://img.shields.io/cocoapods/dm/HexColors.svg)
 ![Cocoapods](https://cocoapod-badges.herokuapp.com/v/HexColors/badge.png)
 [![Build Status](https://travis-ci.org/mRs-/HexColors.svg?branch=master)](https://travis-ci.org/mrs-/HexColors)
@@ -13,9 +13,10 @@
 HexColors is an extension for UIColor and NSColor to support for creating colors from a hex string like #FF0088 or 8844FF and back to a String. Completely rewritten in Swift 3!
 
 If you want to use this in Objective-C jump to the 4.X version tag.
+If you want to use this in Swift < 3.2 use the 5.X version tag.
 
-# RELEASE 5.0.1
-Copy paste Typo Fixxed.
+# RELEASE 6.0.0
+Swift 4.0 compatiblity
 
 # Examples
 How to use HexColors in the different systems.
