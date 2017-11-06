@@ -20,9 +20,10 @@
   public typealias HexColor = NSColor
 #endif
 
+
 public extension HexColor {
   typealias Hex = String
-  
+
   convenience init?(_ hex: Hex, alpha: CGFloat? = nil) {
     
     guard let hexType = Type(from: hex), let components = hexType.components() else {

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'HexColors'
-  s.version = '5.0.1'
+  s.version = '6.0.0'
   s.license = 'MIT'
   s.summary = 'HexColors is an extension for UIColor and NSColor to support for creating colors from a hex strings.'
   s.homepage = 'https://github.com/mRs-/HexColors'

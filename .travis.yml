@@ -1,6 +1,6 @@
 language: objective-c
-osx_image: xcode8.2
-script:
-    - xcodebuild test -scheme HexColors-iOS-Tests -sdk iphonesimulator -destination 'platform=iOS Simulator,id=86B2CA7C-0247-4257-BFEA-8035084AF2CF'
+osx_image: xcode9
+script: 
+  - xcodebuild test -scheme HexColors-iOS-Tests -sdk iphonesimulator -destination 'platform=iOS Simulator,id=19978727-F103-4183-B9B2-F39CD606049C'
 after_success:
   - bash <(curl -s https://codecov.io/bash)

@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 `HexColors` adheres to [Semantic Versioning](http://semver.org/).
 
 ---
+## [6.0.0] (https://github.com/mRs-/HexColors/tree/6.0.0)
+* Swift 4
+
 ## [5.0.1] (https://github.com/mRs-/HexColors/tree/5.0.1)
 * Fixxed a copy paste bug
 
