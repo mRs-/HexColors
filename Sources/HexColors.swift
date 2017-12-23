@@ -20,6 +20,7 @@
   public typealias HexColor = NSColor
 #endif
 
+
 public extension HexColor {
   typealias Hex = String
 
@@ -85,7 +86,7 @@ public extension HexColor {
     }
     
     static func transform(hex string: Hex) -> Type? {
-      switch string.characters.count {
+      switch string.count {
       case 3:
         return .RGBshort(rgb: string)
       case 4:
