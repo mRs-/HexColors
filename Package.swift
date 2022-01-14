@@ -10,10 +10,35 @@
 //  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 //
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
+
+// swift-tools-version:5.1
 
 import PackageDescription
 
 let package = Package(
-    name: "HexColors"
+    name: "HexColors",
+    platforms: [
+        .iOS(.v11),
+        .macOS(.v10_15),
+        .tvOS(.v13)
+    ],
+    products: [
+        .library(
+            name: "HexColors",
+            targets: ["HexColors"]),
+        .library(
+            name: "HexColors-Static",
+            type: .static,
+            targets: ["HexColors"]),
+        .library(
+            name: "HexColors-Dynamic",
+            type: .dynamic,
+            targets: ["HexColors"]),
+    ],
+    dependencies: [],
+    targets: [
+        .target(
+            name: "HexColors",
+            dependencies: [])
+    ]
 )
